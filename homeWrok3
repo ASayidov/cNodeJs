@@ -1,3 +1,4 @@
+
 //============================================Sikl topshiriqlar=================================================
 //1.Konsolda ismingizni 10 marta chiqaradigan skript yozing
 
@@ -189,3 +190,62 @@
 // }
 
 // console.log(arr);
+
+//---------------------------------------------------------------------------------------------------
+//massivni fibonachchi sonlari bilan to'ldiring
+// let fibSerStart = [0, 1];
+// let n = 20;
+// for (let i = 0; fibSerStart.length < n; i++) {
+//   fibSerStart.push(fibSerStart[i] + fibSerStart[i + 1]);
+// }
+
+// console.log(fibSerStart);
+//----------------------------------------------------------------------------------------------------
+//massivni 10 ta takrorlanmas tasodifiy sonlar bilan to'ldiring
+
+// let arr = [];
+
+// for (let i = 0; arr.length < 10; i++) {
+//   let el = Math.ceil(Math.random() * 100);
+//   if (arr[i] !== el) {
+//     arr.push(el);
+//   }
+// }
+
+// console.log(arr);
+
+//--------------------------------------------------------------------------------------------------------
+// Massiv tasodifiy sonlar bilan to'ldirilgan va chop etish lozim:
+// a) barcha manfiy sonlarni
+// b) 100 dan kichik bo'lgan sonlarni
+
+
+
+//-----------------------------------------------------------------------------------------------------
+// Massiv tasodifiy sonlar bilan to'ldirilgan va chop etish lozim:
+// a) barcha juft sonlarni
+// b) nol bilan tugaydigan sonlarni
+
+//------------------------------------------------------------------------------------------------------
+// Massiv tasodifiy sonlar bilan to'ldirilgan va chop etish lozim:
+// a) 2chi, 4chi va hokazo elementlarni
+// b) 3chi, 6chi va hokazo elementlarni
+
+//-----------------------------------------------------------------------------------------------------
+// Massiv tasodifiy sonlar bilan to'ldirilgan
+// a) massivning barcha elementlar yigindisi
+// b) massivning barcha elementlari ko'paytmasi
+// c) barcha elementlar summasi kvadrati
+// d) massivning birinchi 6 ta elementi summasi
+// e) elementlar o'rta arifmetigi
+
+//---------------------------------------------------------------------------------------------------------
+// massivning eng katta elementini toping
+
+//------------------------------------------------------------------------------------------------------------
+// massivning eng katta va eng kichik elementlari joylarini almashtiring
+
+//---------------------------------------------------------------------------------------------------------------
+// massivning birinchi tub sonli element topilsin
+
+//---------------------------------------------------------------------------------------------------------------
