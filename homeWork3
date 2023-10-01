@@ -1,4 +1,3 @@
-
 //============================================Sikl topshiriqlar=================================================
 //1.Konsolda ismingizni 10 marta chiqaradigan skript yozing
 
@@ -186,7 +185,7 @@
 // let n = 25;
 // let arr = [];
 // for (let i = 0; i < n; i++) {
-//   arr.push(Math.pow(2, 2));
+//   arr.push(Math.pow(2, i));
 // }
 
 // console.log(arr);
@@ -219,15 +218,48 @@
 // a) barcha manfiy sonlarni
 // b) 100 dan kichik bo'lgan sonlarni
 
+// let arr = [];
+// for (let i = 0; i < 25; i++) {
+//   arr.push(Math.ceil(Math.random() * 1000));
+//   arr.push(Math.ceil(Math.random() * -100));
+//   if (arr[i] < 0) {
+//     console.log(arr[i]);
+//   }
+//   if (arr[i] < 100) {
+//     console.log(arr[i]);
+//   }
+// }
+
 //-----------------------------------------------------------------------------------------------------
 // Massiv tasodifiy sonlar bilan to'ldirilgan va chop etish lozim:
 // a) barcha juft sonlarni
 // b) nol bilan tugaydigan sonlarni
 
+// let arr = [];
+// for (let i = 0; i < 25; i++) {
+//   arr.push(Math.ceil(Math.random() * 1000));
+//   if (arr[i] % 2 == 0) {
+//     console.log(arr[i]);
+//   }
+//   if (arr[i] % 10 == 0) {
+//     console.log(arr[i]);
+//   }
+// }
+
 //------------------------------------------------------------------------------------------------------
 // Massiv tasodifiy sonlar bilan to'ldirilgan va chop etish lozim:
 // a) 2chi, 4chi va hokazo elementlarni
 // b) 3chi, 6chi va hokazo elementlarni
+// let arr = [];
+// for (let i = 2; i < 25; i++) {
+//   arr.push(Math.ceil(Math.random() * 1000));
+// }
+// for (let i = 0; i < arr.length; i += 2) {
+//   console.log(arr[i]);
+// }
+// for (let i = 0; i < arr.length; i += 3) {
+//   console.log(arr[i]);
+// }
 
 //-----------------------------------------------------------------------------------------------------
 // Massiv tasodifiy sonlar bilan to'ldirilgan
@@ -239,12 +271,58 @@
 
 //---------------------------------------------------------------------------------------------------------
 // massivning eng katta elementini toping
+// let arr = [2, 8, 9, 5, 1, 7, 15, 26, 78, 94];
+// let maxEl = arr[0];
 
+// for (let i = 0; i < arr.length; i++) {
+//   if (arr[i] > maxEl) {
+//     maxEl = arr[i];
+//   }
+// }
+
+// console.log(maxEl);
 //------------------------------------------------------------------------------------------------------------
 // massivning eng katta va eng kichik elementlari joylarini almashtiring
 
+// let arr = [2, 8, 9, 5, 1, 7, 15, 26, 78, 94];
+// let maxEl = arr[0];
+// let minEl = arr[0];
+// let idMax = 0;
+// let idMin = 0;
+
+// for (let i = 0; i < arr.length; i++) {
+//   if (arr[i] > maxEl) {
+//     maxEl = arr[i];
+//     idMax = i;
+//   }
+//   if (minEl > arr[i]) {
+//     minEl = arr[i];
+//     idMin = i;
+//   }
+// }
+
+// arr[idMax] = minEl;
+// arr[idMin] = maxEl;
+
+// console.log(arr);
 //---------------------------------------------------------------------------------------------------------------
 // massivning birinchi tub sonli element topilsin
+
+// let arr = [27, 6, 5, 8, 9, 7, 11, 13];
+
+// for (let i = 0; i < arr.length; i++) {
+//   let check = true;
+//   for (let j = 2; j < arr[i]; j++) {
+//     if (arr[i] % j == 0) {
+//       check = false;
+//       break;
+//     }
+//   }
+//   if (check) {
+//     console.log(arr[i]);
+//     break;
+//   }
+// }
 
 //---------------------------------------------------------------------------------------------------------------
 
