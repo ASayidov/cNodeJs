@@ -1,0 +1,191 @@
+//============================================Sikl topshiriqlar=================================================
+//1.Konsolda ismingizni 10 marta chiqaradigan skript yozing
+
+//let ismCount = 10;
+// for (let i = 0; i < ismCount; i++) {
+//   console.log("Ismim: Abdullajon");
+// }
+
+//-----------------------------------------------------------------------
+// 2.Jadvalda berilgan N sonigacha bo'lgan sonlarni kvadratini chiqaring
+// var N = 8
+// -----------------------------------
+// Son                   Kvadrat
+// -----------------------------------
+// 1                            1
+// 2                            4
+// 3                            9
+// 4                           16
+// 5                           25
+// 6                           36
+// 7                           49
+// 8                           64
+
+// let N = 8;
+// for (let i = 1; i <= N; i++) {
+//   console.log(i, Math.pow(i, 2));
+// }
+//----------------------------------------------------------------------------------
+// Jadvalda berilgan N sonigacha bo'lgan juft sonlarni kvadratini chiqaring
+// var N = 8
+// -----------------------------------
+// Son                   Kvadrat
+// -----------------------------------
+// 2                            4
+// 4                           16
+// 6                           36
+// 8                           64
+
+// let N = 8;
+// for (let i = 2; i <= N; i += 2) {
+//   console.log(i, Math.pow(i, 2));
+// }
+//----------------------------------------------------------------------------------
+// Havoda erkin tushayotgan jismni har T = 0.5 sekundagini hisoblang.
+// g = 9.8   (v=g*T    -   tezlik formulasi)
+// var N = 3
+// -----------------------------------
+// Vaqt                   Tezlik
+// -----------------------------------
+// 0.0                      0.00
+// 0.5                      4.90
+// 1.0                       9.80
+// 1.5                      14.70
+// 2.0                      19.60
+// 2.5                      24.50
+// 3.0                      29.40
+
+// let T = 0.5;
+// let g = 9.8;
+// let N = 3;
+
+// for (let i = 0; i <= N; i += 0.5) {
+//   let v;
+//   console.log(i, (v = i * g).toFixed(2));
+// }
+
+//-------------------------------------------------------------------------------------------
+//Berilgan N sonigacha bo'lganlarni umumiy summasi hisoblansin. Har bir yig'indini konsolda ko'rsatilsin
+// let N = 20;
+// let sum = 0;
+// for (let i = 1; i < N; i++) {
+//   console.log((sum += i));
+// }
+//-------------------------------------------------------------------------------------------------
+// Berilgan N sonigacha juft sonlarni bo'lganlarni  umumiy summasi hisoblansin. Har bir yig'indini konsolda ko'rsatilsin
+// let N = 20i
+// let sum = 0;
+// for (let i = 2; i < N; i += 2) {
+//   console.log((sum += i));
+// }
+//-------------------------------------------------------------------------------------------------
+//Berilgan N sonigacha bo'lganlarni umumiy ko'paytmasi hisoblansin. Har bir ko'paytmani konsolda ko'rsatilsin
+// let n = 6;
+// let kupaytma = 1;
+// for (let i = 1; i <= n; i++) {
+//   kupaytma *= i;
+//   console.log(kupaytma);
+// }
+
+//--------------------------------------------------------------------------------------------------
+// Berilgan 100 gr ni Price bahosi bo'yicha 1 kg gacha bo'lgan baholar jadvalini chiqaring
+// -----------------------------------
+// Og'irlik                 Summa
+// -----------------------------------
+// 100                      1.65
+// 200                      3.30
+// 300                      4.95
+// 400                      6.60
+// 500                      8.25
+// 600                      9.90
+// 700                      11.55
+// 800                      13.20
+// 900                      14.85
+// 1000                     16.50
+
+// let priceKg = 25000;
+// let priceGm = priceKg / 1000;
+
+// for (let i = 100; i <= 1000; i += 100) {
+//   console.log(i, i * priceGm);
+// }
+//-------------------------------------------------------------------------------------------------------------
+//Pifagor (Karrali) jadval
+// for (let i = 2; i < 10; i++) {
+//   for (let j = 1; j < 10; j++) {
+//     console.log(`${i}*${j}=${i * j}`);
+//   }
+// }
+
+//=========================================Massiv bo'yicha topshiriqlar========================================================
+//Massivni prompt yoki tasodifiy sonlar dan 10 element bilan to'ldiring
+
+// let arr = [];
+
+// for (let i = 0; i < 10; i++) {
+//   arr.push(Math.ceil(Math.random() * 100));
+// }
+// console.log(arr);
+//---------------------------------------------------------------------------------
+
+//massivni  20 ta '#' simvoli bilan to'ldiring
+
+// let arr = [];
+
+// for (let i = 0; i < 20; i++) {
+//   arr.push("#");
+// }
+//--------------------------------------------------------------------------------
+//massiv 20 ta o'quvchining 163 va 190 orasida yotuvchi bo'ylarini saqlash uchun foydalaning.
+
+// let massalar = [];
+
+// while (massalar.length < 20) {
+//   let massa = Math.ceil(Math.random() * 200);
+//   if (massa >= 163 && massa <= 190) {
+//     massalar.push(massa);
+//   }
+// }
+
+// console.log(massalar);
+//-----------------------------------------------------------------------------------------------------------
+//Massivni a va b orasida yotuvchi n ta tasodifiy sonlar bilan to'ldiring
+
+// let arr = [];
+// let a = 80;
+// b = 12;
+// n = 20;
+// while (arr.length < 20) {
+//   let tasEl = Math.ceil(Math.random() * 100);
+//   if (tasEl <= a && tasEl >= b && arr.length < 20) {
+//     arr.push(tasEl);
+//   }
+// }
+// for (let i = 0; arr.length < 20; i++) {
+//   let tasEl = Math.ceil(Math.random() * 100);
+//   if (tasEl <= a && tasEl >= b && arr.length < 20) {
+//     arr.push(tasEl);
+//   }
+// }
+
+// console.log(arr);
+//---------------------------------------------------------------------------------------------------------------
+//Massivni teskari tarzda chop eting
+
+// let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+// let arr2 = [];
+// for (let i = arr.length - 1; i >= 0; i--) {
+//   arr2.push(arr[i]);
+// }
+// console.log(arr2);
+
+//------------------------------------------------------------------------------------------------------------
+//massivga n ta 2 ning darajalarini joylashtiring
+
+// let n = 25;
+// let arr = [];
+// for (let i = 0; i < n; i++) {
+//   arr.push(Math.pow(2, 2));
+// }
+
+// console.log(arr);
