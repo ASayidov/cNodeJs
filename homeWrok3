@@ -219,8 +219,6 @@
 // a) barcha manfiy sonlarni
 // b) 100 dan kichik bo'lgan sonlarni
 
-
-
 //-----------------------------------------------------------------------------------------------------
 // Massiv tasodifiy sonlar bilan to'ldirilgan va chop etish lozim:
 // a) barcha juft sonlarni
@@ -249,3 +247,41 @@
 // massivning birinchi tub sonli element topilsin
 
 //---------------------------------------------------------------------------------------------------------------
+
+//===================================================== String bo'yicha topshiriqlar====================================================================
+
+// 1. so'z berilgan uning k-simvolni chiqaring
+
+// 2. so'z berilgan uning ohirgi simvoli chiqarilsin
+
+// 3. so'z berilgan uning 1- 2- va 3- simvollar bir xillikka Tekshiring
+
+// 4. so'z berilgan bu so'z boshlangan simvol shu simvol bilan tugaydimi?
+
+// 5. so'z berilgan uning 2- 4- 6- simvollarinidan tashkil topgan yangi so'zni chiqaring
+
+// 6. so'z berilgan uning k-chidan boshlangan m ta harfni chiqaring.
+
+// 7. berilgan matndagi "hammaga" so'zni "barchaga" ga almashtiring.
+
+// 8. berilgan matndagi "pashsha"dan "fil" qiling
+
+// 9. so'z berilgan undagi boshidan k ta harfni ohiriga o'tkazing
+
+// 10. s1 so'z berilgan s2 so'zni s1ning juft o'rindagi harflardan yasang
+
+// 11. ikkita so'z berilgan. birinchi so'zdagi simvollar sonicha ikkinchi so'zdagi simvolni almashtiring.
+
+// 12. matn berilgan. matndagi u harfi mavjud bo'lgan so'zlarni chop eting
+
+// 13. matndagi 'sh' harfni ш ga almashtiring
+
+// 14. matn berilgan. matndagi so'zlarda bir xil bo'lgan qo'shni harflar mavjud so'zlarni chop eting.
+
+// 15. matn berilgan. matnda eng ko'p uchragan harfni toping
+
+// 16. matn berilgan. matnda eng ko'p uchragan harfni o'chiring
+
+// 17. matndagi eng uzun so'zni a harfiga almashtiring
+
+// 18. matndagi eng qisqa uzunlikdagi so'zni uzunligini chiqaring
