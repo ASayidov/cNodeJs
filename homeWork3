@@ -459,17 +459,33 @@
 // 13. matndagi 'sh' harfni ш ga almashtiring
 
 // let matn = "Shamol yomgir shisha shurp";
-// let natija1 = matn.replace(/sh/gi, "ш");
-// let natija2 = matn.split("sh").join("ш").replace("Sh", "ш");
+// let natija = matn.split("sh").join("ш").replace("Sh", "Ш");
 
-// console.log(natija2);
+// console.log(natija);
 
 //------------------------------------------------------------------------------------------------------------
 
 // 14. matn berilgan. matndagi so'zlarda bir xil bo'lgan qo'shni harflar mavjud so'zlarni chop eting.
-let matn = "";
+// let matn =
+//   "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.";
+// let arr = matn.split(" ");
+
+// for (let i = 0; i < arr.length; i++) {
+//   let arr2 = arr[i];
+
+//   for (let j = 0; j < arr2.length; j++) {
+//     if (arr2[j] === arr2[j + 1]) {
+//       console.log(arr2);
+//     }
+//   }
+// }
 
 // 15. matn berilgan. matnda eng ko'p uchragan harfni toping
+
+
+
+
+
 
 // 16. matn berilgan. matnda eng ko'p uchragan harfni o'chiring
 
