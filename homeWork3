@@ -1,3 +1,4 @@
+
 //============================================Sikl topshiriqlar=================================================
 //1.Konsolda ismingizni 10 marta chiqaradigan skript yozing
 
@@ -482,10 +483,26 @@
 
 // 15. matn berilgan. matnda eng ko'p uchragan harfni toping
 
+let matn = "asdefdfdsdfsdfsedddssdfsdnknmwlqweeeeeeeessssssssssseeeee";
+let arr = matn.split("");
 
+let harf = "";
+let reCount = 0;
+let maxCount = 0;
 
-
-
+for (let i = 0; i < arr.length; i++) {
+  let reCount = 0;
+  for (let j = 0; j < arr.length; j++) {
+    if (arr[i] === arr[j] && arr[i] === arr[i + 1]) {
+      reCount++;
+    }
+  }
+  if (reCount > maxCount) {
+    harf = arr[i];
+    maxCount = reCount;
+  }
+}
+console.log(harf);
 
 // 16. matn berilgan. matnda eng ko'p uchragan harfni o'chiring
 
