@@ -330,31 +330,144 @@
 
 // 1. so'z berilgan uning k-simvolni chiqaring
 
+// let str = "assalkmu alaykum";
+// let k = 5;
+// if (str[k] !== " ") {
+//   console.log(str[k]);
+// } else console.log("simvol topilmadi");
+
+//------------------------------------------------------------------------------------------------------------
+
 // 2. so'z berilgan uning ohirgi simvoli chiqarilsin
 
+// let str = "assalamu alaykum";
+
+// console.log(str[str.length - 1]);
+//--------------------------------------------------------------------------------------------------------------
+
 // 3. so'z berilgan uning 1- 2- va 3- simvollar bir xillikka Tekshiring
+// let str = "assalamu alaykum";
+// if (str[1] === str[2] && str[2] === str[3]) {
+//   console.log(true);
+// } else console.log("simvollar bir xil emas");
+
+//------------------------------------------------------------------------------------------------------------
 
 // 4. so'z berilgan bu so'z boshlangan simvol shu simvol bilan tugaydimi?
 
+// let suz = "dasturlash";
+
+// for (let i = 0; i < suz.length; i++) {
+//   if (condition) {
+
+//   }
+
+// }
+
+//---------------------------------------------------------------------------------------------------------
+
 // 5. so'z berilgan uning 2- 4- 6- simvollarinidan tashkil topgan yangi so'zni chiqaring
+// let suz = "dasturlash";
+// let yangiSuz = `${suz[2]}${suz[4]}${suz[6]}`;
+// console.log(yangiSuz);
+
+//--------------------------------------------------------------------------------------------------------
 
 // 6. so'z berilgan uning k-chidan boshlangan m ta harfni chiqaring.
 
+// let suz = "uzbekistan";
+// let k = 2;
+// m = 7;
+// console.log(suz.slice(k, m));
+
+//----------------------------------------------------------------------------------------------------------
+
 // 7. berilgan matndagi "hammaga" so'zni "barchaga" ga almashtiring.
+
+// let suz = "hammaga";
+// let suz2 = "barcha";
+
+// let natija = suz.replace("hamma", "barcha");
+// console.log(natija);
+
+//-----------------------------------------------------------------------------------------------------------
 
 // 8. berilgan matndagi "pashsha"dan "fil" qiling
 
+// let suz = "pashsha";
+// let suz2 = "fil";
+
+// let natija = suz.replace(suz, suz2);
+// console.log(natija);
+
+//-----------------------------------------------------------------------------------------------------------
+
 // 9. so'z berilgan undagi boshidan k ta harfni ohiriga o'tkazing
+
+// let suz = "dasturlash";
+// let k = 3;
+
+// let suz1 = suz.slice(0, 3);
+// let suz2 = suz.slice(3, suz.length);
+// let natija = suz2 + suz1;
+
+// console.log(natija);
+
+//------------------------------------------------------------------------------------------------------------
 
 // 10. s1 so'z berilgan s2 so'zni s1ning juft o'rindagi harflardan yasang
 
+// let s1 = "dasturlash";
+// let s2 = "";
+// for (let i = 1; i < s1.length; i += 2) {
+//   s2 += s1[i];
+// }
+
+// console.log(s2);
+
+//--------------------------------------------------------------------------------------------------------------
+
 // 11. ikkita so'z berilgan. birinchi so'zdagi simvollar sonicha ikkinchi so'zdagi simvolni almashtiring.
+
+// let suz1 = " dars";
+// let suz2 = "developer";
+
+// let natija = suz1 + suz2.slice(0, suz1.length - 1);
+
+// console.log(natija);
+
+//---------------------------------------------------------------------------------------------------------------
 
 // 12. matn berilgan. matndagi u harfi mavjud bo'lgan so'zlarni chop eting
 
+//let matn =
+"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.";
+
+// let matn1 = matn.split(" ");
+// let matn2 = [];
+
+// for (let i = 0; i < matn1.length; i++) {
+//   if (matn1[i].includes("u")) {
+//     matn2.push(matn1[i]);
+//   }
+// }
+// let natija = matn2.join(" ");
+// console.log(matn);
+
+//------------------------------------------------------------------------------------------------------------
+
 // 13. matndagi 'sh' harfni ш ga almashtiring
 
+// let matn = "Shamol yomgir shisha shurp";
+// let natija1 = matn.replace(/sh/gi, "ш");
+// let natija2 = matn.split("sh").join("ш").replace("Sh", "ш");
+
+// console.log(natija2);
+
+//------------------------------------------------------------------------------------------------------------
+
 // 14. matn berilgan. matndagi so'zlarda bir xil bo'lgan qo'shni harflar mavjud so'zlarni chop eting.
+let matn = "";
 
 // 15. matn berilgan. matnda eng ko'p uchragan harfni toping
 
