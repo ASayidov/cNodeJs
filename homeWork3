@@ -481,31 +481,91 @@
 //   }
 // }
 
+// -------------------------------------------------------------------------------------
 // 15. matn berilgan. matnda eng ko'p uchragan harfni toping
 
-let matn = "asdefdfdsdfsdfsedddssdfsdnknmwlqweeeeeeeessssssssssseeeee";
-let arr = matn.split("");
+// let matn =
+//   "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.";
 
-let harf = "";
-let reCount = 0;
-let maxCount = 0;
+// let harflar = matn.split("");
 
-for (let i = 0; i < arr.length; i++) {
-  let reCount = 0;
-  for (let j = 0; j < arr.length; j++) {
-    if (arr[i] === arr[j] && arr[i] === arr[i + 1]) {
-      reCount++;
-    }
-  }
-  if (reCount > maxCount) {
-    harf = arr[i];
-    maxCount = reCount;
-  }
-}
-console.log(harf);
+// let harf = "";
+// let maxCount = 0;
+// let reCount = 0;
 
+// for (let i = 0; i < harflar.length; i++) {
+//   reCount = 0;
+
+//   for (let j = 0; j < harflar.length; j++) {
+//     if (harflar[i] === harflar[j] && harflar[i] === harflar[i + 1]) {
+//       reCount++;
+//     }
+//   }
+//   if (reCount > maxCount) {
+//     harf = harflar[i];
+//     maxCount = reCount;
+//   }
+// }
+// console.log(harf);
+//----------------------------------------------------------------------------------------
 // 16. matn berilgan. matnda eng ko'p uchragan harfni o'chiring
 
-// 17. matndagi eng uzun so'zni a harfiga almashtiring
+// let matn =
+//   "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.";
 
+// let harflar = matn.split("");
+
+// let harf = "";
+// let maxCount = 0;
+// let reCount = 0;
+
+// for (let i = 0; i < harflar.length; i++) {
+//   reCount = 0;
+
+//   for (let j = 0; j < harflar.length; j++) {
+//     if (harflar[i] === harflar[j] && harflar[i] === harflar[i + 1]) {
+//       reCount++;
+//     }
+//   }
+//   if (reCount > maxCount) {
+//     harf = harflar[i];
+//     maxCount = reCount;
+//   }
+// }
+
+// let natija = harflar.join("").split(harf).join("");
+// console.log(natija);
+
+//----------------------------------------------------------------------------------------
+
+// 17. matndagi eng uzun so'zni a harfiga almashtiring
+// let matn =
+//   "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.";
+
+// let matn2 = matn.split(" ");
+// let matnLen = 0;
+// let longWord = "";
+// for (let i = 0; i < matn2.length; i++) {
+//   if (matn2[i].length > matnLen) {
+//     matnLen = matn2[i].length;
+//     longWord = matn2[i];
+//   }
+// }
+// let natija = matn.split(longWord).join("a");
+// console.log(natija);
+//------------------------------------------------------------------------------------
 // 18. matndagi eng qisqa uzunlikdagi so'zni uzunligini chiqaring
+
+// let matn =
+//   "Lorem Ipsum simply dummy text the printing and typesetting industry.";
+
+// let matn2 = matn.split(" ");
+// let matnLen = 50;
+
+// for (let i = 0; i < matn2.length; i++) {
+//   if (matn2[i].length < matnLen) {
+//     matnLen = matn2[i].length;
+//   }
+// }
+// console.log(matnLen);
+
