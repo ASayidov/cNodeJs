@@ -590,3 +590,18 @@
 // }
 // let natija = matn.split(longWord).join("a");
 // console.log(natija);
+// 18. matndagi eng qisqa uzunlikdagi so'zni uzunligini chiqaring
+
+let matn = "assalomu alaykum br qaley ishlar yaxshimi";
+
+let matn2 = matn.split(" ");
+
+let qisqa = matn2[0].length;
+
+for (let i = 0; i < matn2.length; i++) {
+  if (matn2[i].length < qisqa) {
+    qisqa = matn2[i].length;
+  }
+}
+
+console.log(qisqa);
