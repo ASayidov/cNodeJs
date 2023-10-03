@@ -569,3 +569,24 @@
 // }
 // console.log(matnLen);
 
+
+
+
+// 17. matndagi eng uzun so'zni a harfiga almashtiring
+// let matn =
+//   "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.";
+
+// let matn2 = matn.split(" ");
+
+// let matnLen = 0;
+// let longWord = "";
+// for (let i = 0; i < matn2.length; i++) {
+//   for (let j = 0; j < matn2.length; j++) {
+//     if (matnLen < matn2[j].length) {
+//       matnLen = matn2[j].length;
+//       longWord = matn2[j];
+//     }
+//   }
+// }
+// let natija = matn.split(longWord).join("a");
+// console.log(natija);
