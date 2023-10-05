@@ -133,3 +133,18 @@ const textArea = document.querySelector(".textarea");
 // btnAdd.addEventListener("click", () => sendValue(in1.value));
 
 //--------------------------------------------------------------------------------------
+//№8
+// const sendValue = () => {
+//   let priceKg = 25000;
+//   let priceGm = priceKg / 1000;
+
+//   for (let i = 100; i <= 1000; i += 100) {
+//     textArea.innerHTML += `<p>${(i, i * priceGm)}</p>`;
+//   }
+
+//   in1.value = "";
+// };
+
+// btnAdd.addEventListener("click", () => sendValue());
+//----------------------------------------------------------------------------------------
+//#9
