@@ -109,15 +109,27 @@ const textArea = document.querySelector(".textarea");
 
 //------------------------------------------------------------------------------------
 //№6
-const sendValue = (N) => {
-  let sum = 0;
-  for (let i = 2; i < N; i += 2) {
-    textArea.innerHTML += `<p>${(sum += i)}</p>`;
-  }
+// const sendValue = (N) => {
+//   let sum = 0;
+//   for (let i = 2; i < N; i += 2) {
+//     textArea.innerHTML += `<p>${(sum += i)}</p>`;
+//   }
 
-  in1.value = "";
-};
+//   in1.value = "";
+// };
 
-btnAdd.addEventListener("click", () => sendValue(in1.value));
+// btnAdd.addEventListener("click", () => sendValue(in1.value));
 //------------------------------------------------------------------------------------
+//№7
+// const sendValue = (N) => {
+//   let kupaytma = 1;
+//   for (let i = 2; i <= N; i++) {
+//     textArea.innerHTML += `<p>${(kupaytma *= i)}</p>`;
+//   }
 
+//   in1.value = "";
+// };
+
+// btnAdd.addEventListener("click", () => sendValue(in1.value));
+
+//--------------------------------------------------------------------------------------
