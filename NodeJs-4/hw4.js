@@ -109,14 +109,7 @@ const textArea = document.querySelector(".textarea");
 
 //------------------------------------------------------------------------------------
 //№6
-// Berilgan N sonigacha juft sonlarni bo'lganlarni  umumiy summasi hisoblansin. Har bir yig'indini konsolda ko'rsatilsin
-// let N = 20
-// let sum = 0;
-// for (let i = 2; i < N; i += 2) {
-//   console.log((sum += i));
-// }
-const sendValue = () => {
-  let N = in1.value;
+const sendValue = (N) => {
   let sum = 0;
   for (let i = 2; i < N; i += 2) {
     textArea.innerHTML += `<p>${(sum += i)}</p>`;
@@ -125,4 +118,6 @@ const sendValue = () => {
   in1.value = "";
 };
 
-btnAdd.addEventListener("click", () => sendValue());
+btnAdd.addEventListener("click", () => sendValue(in1.value));
+//------------------------------------------------------------------------------------
+
