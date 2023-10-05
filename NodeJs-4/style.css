@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper{
+    width: 80%;
+    height: 100vh;
+    margin: 0 auto;
+    background-color:gainsboro;
+    
+}
+
+#in1 {
+    width: 40%;
+    margin: 20px 0 0 30%;
+    padding: 5px;
+}
+
+#btnAdd {
+    height: 4%;
+    width: 5%;
+}
