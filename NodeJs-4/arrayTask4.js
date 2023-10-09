@@ -57,4 +57,16 @@
 // btnAdd.addEventListener("click", () => sendVal(in1.value));
 
 //#5-------------------------------------------------------------------------------
+//Massivni teskari tarzda chop eting
 
+function sendVal(n) {
+  let arr = [];
+
+  while (arr.length < n) {
+    let tasEl = Math.ceil(Math.random() * 100);
+    arr.push(tasEl);
+  }
+  textArea.innerHTML += `<p>  ${n} ta tasodifiy sonlar massivi: [${arr}] va uning teskari shakli: [${arr.reverse()}]</p>`;
+}
+
+btnAdd.addEventListener("click", () => sendVal(in1.value));
