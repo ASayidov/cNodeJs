@@ -9,7 +9,7 @@
 <body>
     <div class="container">
         <div class="row">
-            <div class="col-4">
+            <div class="col-4" id="form">
                 <h4>Yangi texnika</h4>
                 <div class="mb-3">
                     <label  class="form-label">Texnika nomi</label>
@@ -23,12 +23,12 @@
                     <label  class="form-label">Ishlab chiqarilgan yili</label>
                     <select class="form-select" name="texnika turi">
                         <option selected>Open this select menu</option>
-                        <option value="Avtomobillar turkumi">One</option>
-                        <option value="Samalyotlar turkumi">Two</option>
-                        <option value="Poyezdlar turkumi">Three</option>
+                        <option value="Avtomobillar turkumi">Avtomobillar turkumi</option>
+                        <option value="Samalyotlar turkumi">Samalyotlar turkumi</option>
+                        <option value="Poyezdlar turkumi">Poyezdlar turkumi</option>
                       </select>
                   </div>
-                  <button class="btn btn-success">Saqlash</button>
+                  <button class="btn btn-success" onclick="addTech()">Saqlash</button>
                
             </div>
             <div class="col-8">
@@ -36,29 +36,14 @@
                     <thead>
                       <tr>
                         <th scope="col">#</th>
-                        <th scope="col">First</th>
-                        <th scope="col">Last</th>
-                        <th scope="col">Handle</th>
+                        <th scope="col">Texnika nomi</th>
+                        <th scope="col">Ishlab chiqilgan yili</th>
+                        <th scope="col">Bo'lim</th>
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">3</th>
-                        <td colspan="2">Larry the Bird</td>
-                        <td>@twitter</td>
-                      </tr>
+                   
+                
                     </tbody>
                   </table>
             </div>

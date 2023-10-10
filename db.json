@@ -1,3 +1,22 @@
 {
-    "technicals":[]
+  "technicals": [
+    {
+      "fname": "we",
+      "year": "2003",
+      "texnika turi": "Avtomobillar turkumi",
+      "id": 1
+    },
+    {
+      "fname": "Donaldcxcx",
+      "year": "",
+      "texnika turi": "Samalyotlar turkumi",
+      "id": 2
+    },
+    {
+      "fname": "matiz",
+      "year": "2006",
+      "texnika turi": "Avtomobillar turkumi",
+      "id": 3
+    }
+  ]
 }
