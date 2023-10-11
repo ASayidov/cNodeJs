@@ -17,6 +17,9 @@ const render = () => {
         <td>${index + 1}</td>
         <td>${item.fname}</td>
         <td>${item.year}</td>
+        <td>${item.price}</td>
+        <td>${item.discount}</td>
+        <td>${item.totalPrice}</td>
         <td>${item.techType}</td>
       </tr>
     `;
@@ -36,7 +39,7 @@ const addTech = () => {
   inputs.forEach((e) => {
     tech[e.getAttribute("name")] = e.value;
   });
-  console.log(JSON.stringify(tech));
+
   fetch(url, {
     method: "POST",
     headers: {

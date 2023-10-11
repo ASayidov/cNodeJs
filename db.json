@@ -1,88 +1,31 @@
 {
   "technicals": [
     {
-      "fname": "CENTRA",
-      "year": "2003",
-      "texnika turi": "Avtomobillar turkumi",
-      "id": 1
-    },
-    {
-      "fname": "TU",
-      "year": "2001",
-      "texnika turi": "Samalyotlar turkumi",
+      "fname": "Damas",
+      "year": "2020",
+      "price": "500",
+      "discount": "50",
+      "totalPrice": "1000",
+      "techType": "Avtomobillar turkumi",
       "id": 2
     },
     {
-      "fname": "matiz",
-      "year": "2006",
-      "texnika turi": "Avtomobillar turkumi",
-      "id": 3
-    },
-    {
-      "fname": "Spark",
-      "year": "2011",
-      "texnika turi": "Avtomobillar turkumi",
-      "id": 4
-    },
-    {
-      "fname": "NEXIA",
-      "year": "2005",
-      "texnika turi": "Avtomobillar turkumi",
-      "id": 5
-    },
-    {
-      "fname": "TICO",
-      "year": "2011",
-      "texnika turi": "Avtomobillar turkumi",
-      "id": 6
-    },
-    {
-      "fname": "byd",
-      "year": "2023",
-      "texnika turi": "Avtomobillar turkumi",
-      "id": 7
-    },
-    {
-      "fname": "BOING",
-      "year": "2011",
-      "texnika turi": "Samalyotlar turkumi",
-      "id": 8
-    },
-    {
-      "fname": "DAMAS",
-      "year": "2013",
-      "techType": "Avtomobillar turkumi",
-      "id": 9
-    },
-    {
-      "fname": "spark",
-      "year": "2005",
-      "techType": "Avtomobillar turkumi",
-      "id": 10
-    },
-    {
-      "fname": "bmw",
-      "year": "2022",
-      "techType": "Avtomobillar turkumi",
-      "id": 11
-    },
-    {
-      "fname": "porse",
-      "year": "2011",
-      "techType": "Avtomobillar turkumi",
-      "id": 12
-    },
-    {
-      "fname": "tracker",
-      "year": "2023",
-      "techType": "Avtomobillar turkumi",
-      "id": 13
-    },
-    {
       "fname": "Kamaz",
-      "year": "2001",
+      "year": "2021",
+      "price": "1000",
+      "discount": "50",
+      "totalPrice": "2000",
       "techType": "Avtomobillar turkumi",
-      "id": 14
+      "id": 2
+    },
+    {
+      "fname": "Boing",
+      "year": "2023",
+      "price": "80000",
+      "discount": "50",
+      "totalPrice": "160000",
+      "techType": "Samalyotlar turkumi",
+      "id": 3
     }
   ]
 }
