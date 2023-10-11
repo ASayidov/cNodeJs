@@ -11,10 +11,10 @@ let techs = [];
 
 const render = () => {
   tbody.innerHTML;
-  techs.forEach((item) => {
+  techs.forEach((item, index) => {
     tbody.innerHTML += `
       <tr>
-        <td>${item.id}</td>
+        <td>${index + 1}</td>
         <td>${item.fname}</td>
         <td>${item.year}</td>
         <td>${item.techType}</td>
@@ -23,7 +23,7 @@ const render = () => {
   });
 };
 
-fetch(url)
+fetch(`${url}?_sort=id&_order=desc`)
   .then((resp) => resp.json())
   .then((res) => {
     techs = [...res];
@@ -46,6 +46,7 @@ const addTech = () => {
   })
     .then((res) => res.json())
     .then((newTech) => {
-      console.log(newTech);
+      techs = [newTech, ...techs];
+      render();
     });
 };

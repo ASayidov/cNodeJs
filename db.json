@@ -71,6 +71,18 @@
       "year": "2011",
       "techType": "Avtomobillar turkumi",
       "id": 12
+    },
+    {
+      "fname": "tracker",
+      "year": "2023",
+      "techType": "Avtomobillar turkumi",
+      "id": 13
+    },
+    {
+      "fname": "Kamaz",
+      "year": "2001",
+      "techType": "Avtomobillar turkumi",
+      "id": 14
     }
   ]
 }
