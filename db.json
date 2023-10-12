@@ -1,33 +1,20 @@
 {
-  "technicals": [
+  "todos": [
     {
-      "fname": "Damas",
-      "year": "2020",
-      "price": "500",
-      "discount": "50",
-      "totalPrice": "1000",
-      "techType": "Avtomobillar turkumi",
-      "id": 1
+      "input": "",
+      "id": 109
     },
     {
-      "fname": "Kamaz",
-      "year": "2021",
-      "price": "1000",
-      "discount": "50",
-      "totalPrice": "2000",
-      "techType": "Avtomobillar turkumi",
-      "id": 2
+      "input": "",
+      "id": 110
     },
     {
-      "fname": "Boing",
-      "year": "2023",
-      "price": "80000",
-      "discount": "50",
-      "totalPrice": "160000",
-      "techType": "Samalyotlar turkumi",
-      "id": 3
+      "input": "n,mns.mnv a.smnd v.ams n.nmdv .asmnd.vnsd",
+      "id": 111
+    },
+    {
+      "input": "scasacascascscasc",
+      "id": 112
     }
-  ],
-  "todo": []
+  ]
 }
-
