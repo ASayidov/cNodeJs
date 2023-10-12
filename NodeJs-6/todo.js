@@ -15,7 +15,7 @@ const render = () => {
     <td>${i + 1}</td>
     <td>${item.input}</td>
     <td><button onclick="editTodo(${item.id})">edit</button></td>
-    <td><button onclick="delTodo(${item.id})">delete</button></td>
+    <td><button onclick="delTodo(${item})">delete</button></td>
      </tr>`;
   });
 };
@@ -24,12 +24,13 @@ fetch(url)
   .then((resp) => resp.json())
   .then((res) => {
     todos = [...res, todos];
-    console.log(res);
     render();
   });
 
 function editTodo(id) {
-  console.log(id);
+  fetch(`${url}/${id}`)
+    .then((res) => res.json())
+    .then((todo) => console.log(todo[input.getAttribute("name")]));
 }
 
 function delTodo(id) {
