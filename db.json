@@ -1,3 +1,12 @@
 {
-  "todos": []
+  "todos": [
+    {
+      "input": "salom",
+      "id": 1
+    },
+    {
+      "input": "salom lar",
+      "id": 2
+    }
+  ]
 }

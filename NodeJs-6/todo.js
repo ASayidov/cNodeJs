@@ -39,6 +39,7 @@ function delTodo(id) {
   }).then(() => {
     todos = todos.filter((e) => e.id !== id);
   });
+  render();
 }
 
 const addTodos = () => {
