@@ -1,4 +1,4 @@
-const input = document.getElementById("input-create");
+let input = document.getElementById("input-create");
 const form = document.getElementById("form-create");
 const url = "http://localhost:3000/todos";
 
@@ -15,7 +15,7 @@ const render = () => {
     <td>${i + 1}</td>
     <td>${item.input}</td>
     <td><button onclick="editTodo(${item.id})">edit</button></td>
-    <td><button onclick="delTodo(${item})">delete</button></td>
+    <td><button onclick="delTodo(${item.id})">delete</button></td>
      </tr>`;
   });
 };
@@ -30,7 +30,7 @@ fetch(url)
 function editTodo(id) {
   fetch(`${url}/${id}`)
     .then((res) => res.json())
-    .then((todo) => console.log(todo[input.getAttribute("name")]));
+    .then((todo) => (input.value = todo[input.getAttribute("name")]));
 }
 
 function delTodo(id) {
