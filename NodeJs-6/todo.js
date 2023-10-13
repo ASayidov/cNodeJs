@@ -1,11 +1,12 @@
 let input = document.getElementById("input-create");
-//const form = document.getElementById("form-create");
+const form = document.getElementById("form-create");
 const url = "http://localhost:3000/todos";
 
-const btn = document.getElementsByTagName("button");
+//const btn = document.getElementsByTagName("button");
 const tbody = document.querySelector("tbody");
 
 let todos = [];
+let toggle = false;
 
 const render = () => {
   tbody.innerHTML = "";
@@ -20,7 +21,7 @@ const render = () => {
   });
 };
 
-fetch(url)
+fetch(`${url}?_sort=id&_order=desc`)
   .then((resp) => resp.json())
   .then((res) => {
     todos = [...res];
@@ -30,7 +31,11 @@ fetch(url)
 function editTodo(id) {
   fetch(`${url}/${id}`)
     .then((res) => res.json())
-    .then((todo) => (input.value = todo[input.getAttribute("name")]));
+    .then((todo) => {
+      console.log(todo);
+      input.value = todo[input.getAttribute("name")];
+    });
+  toggle = true;
 }
 
 function delTodo(id) {
@@ -42,20 +47,44 @@ function delTodo(id) {
   render();
 }
 
-const addTodos = () => {
-  let todo = {};
+const addTodos = (e) => {
+  e.preventDefault();
+  const todo = {};
+
   todo[input.getAttribute("name")] = input.value;
 
-  fetch(url, {
-    method: "POST",
-    headers: {
-      "Content-type": "application/json",
-    },
-    body: JSON.stringify(todo),
-  })
-    .then((res) => res.json())
-    .then((newTodos) => {
-      todo = [newTodos, ...todo];
-    });
-  render();
+  console.log(todo);
+  form.reset();
+  if (toggle) {
+    fetch(`${url}/${todo.id}`, {
+      method: "PUT",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify(todo),
+    })
+      .then((res) => res.json())
+      .then((newTodo) => {
+        todos = todos.map((todo) => {
+          if (todo.id == newTodo.id) return newTodo;
+          return todo;
+        });
+        toggle = false;
+        render();
+      });
+  } else {
+    delete todo.id;
+    fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify(todo),
+    })
+      .then((res) => res.json())
+      .then((newTodo) => {
+        todos = [newTodo, ...todos];
+        render();
+      });
+  }
 };
