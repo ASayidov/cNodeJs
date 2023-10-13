@@ -1,5 +1,5 @@
 let input = document.getElementById("input-create");
-const form = document.getElementById("form-create");
+//const form = document.getElementById("form-create");
 const url = "http://localhost:3000/todos";
 
 const btn = document.getElementsByTagName("button");
@@ -23,7 +23,7 @@ const render = () => {
 fetch(url)
   .then((resp) => resp.json())
   .then((res) => {
-    todos = [...res, todos];
+    todos = [...res];
     render();
   });
 
