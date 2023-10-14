@@ -13,33 +13,72 @@
     <title>todo</title>
   </head>
   <body>
-    <main class="container">
-      <form onsubmit="addTodos(event)" id="form-create" class="mb-3 mt-5">
-        <input type="hidden" name="id" />
-        <div class="mb-3">
-          <input
-            required
-            name="input"
-            id="input-create"
-            type="text"
-            class="mb-1 form-control"
-            placeholder="Type todo..."
-            autocomplete="off"
-          />
+    <div class="container">
+      <div class="row">
+        <div class="col-4">
+          <form onsubmit="addTodos(event)" id="form-create" class="mb-3 mt-5">
+            <input type="hidden" name="id" id="hid" />
+            <div class="mb-3">
+              <label for="todoname" class="form-label"
+                >Topshiriq sarlavxasi</label
+              >
+              <input
+                name="todoname"
+                type="text"
+                class="form-control"
+                placeholder="Sarlavha..."
+              />
+            </div>
+            <div class="mb-3">
+              <label for="todo" class="form-label">Topshiriq matni</label>
+              <input
+                name="todo"
+                type="text"
+                class="form-control"
+                placeholder="Topshiriq matni..."
+              />
+            </div>
+            <div class="mb-3">
+              <label for="date" class="form-label"
+                >Topshiriq tugash sanasi</label
+              >
+              <input
+                name="date"
+                type="date"
+                class="form-control"
+                placeholder="Topshiriq matni..."
+              />
+            </div>
+            <div class="mb-3">
+              <label for="person" class="form-label">Mas'ul xodim</label>
+              <input
+                name="person"
+                type="text"
+                class="form-control"
+                placeholder="Mas'ul xodim..."
+              />
+            </div>
+
+            <button
+              type="submit"
+              class="btn btn-outline-success d-block ms-auto"
+            >
+              Save
+            </button>
+          </form>
         </div>
-        <button type="submit" class="btn btn-outline-success d-block ms-auto">
-          Save
-        </button>
-      </form>
-      <table>
-        <thead>
-          <tr>
-            <th>todos</th>
-          </tr>
-        </thead>
-        <tbody></tbody>
-      </table>
-    </main>
+        <div class="col-8 mt-5">
+          <table>
+            <thead>
+              <tr>
+                <th>todos</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
 
     <script src="./todo.js"></script>
   </body>

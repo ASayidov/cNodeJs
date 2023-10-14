@@ -1,9 +1,8 @@
-let input = document.getElementById("input-create");
+//let input = document.getElementById("input-create");
 const form = document.getElementById("form-create");
 const url = "http://localhost:3000/todos";
-
-//const btn = document.getElementsByTagName("button");
 const tbody = document.querySelector("tbody");
+const inps = document.querySelectorAll("#form-create [name]");
 
 let todos = [];
 let toggle = false;
@@ -32,8 +31,9 @@ function editTodo(id) {
   fetch(`${url}/${id}`)
     .then((res) => res.json())
     .then((todo) => {
-      console.log(todo);
-      input.value = todo[input.getAttribute("name")];
+      inps.forEach((el) => {
+        el.value = todo[el.getAttribute("name")];
+      });
     });
   toggle = true;
 }
@@ -51,9 +51,10 @@ const addTodos = (e) => {
   e.preventDefault();
   const todo = {};
 
-  todo[input.getAttribute("name")] = input.value;
+  inps.forEach((el) => {
+    todo[el.getAttribute("name")] = el.value;
+  });
 
-  console.log(todo);
   form.reset();
   if (toggle) {
     fetch(`${url}/${todo.id}`, {
@@ -64,9 +65,9 @@ const addTodos = (e) => {
       body: JSON.stringify(todo),
     })
       .then((res) => res.json())
-      .then((newTodo) => {
+      .then((upTodo) => {
         todos = todos.map((todo) => {
-          if (todo.id == newTodo.id) return newTodo;
+          if (todo.id == upTodo.id) return upTodo;
           return todo;
         });
         toggle = false;
