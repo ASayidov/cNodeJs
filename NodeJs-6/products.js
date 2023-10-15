@@ -4,13 +4,22 @@ const form = document.getElementById("form-create");
 const url = "http://localhost:3000/products";
 const tbody = document.querySelector("tbody");
 const inps = document.querySelectorAll("#form-create [name]");
+const total = document.getElementById("total");
 
 let products = [];
 let toggle = false;
+let totPrice = 0;
+let totMassa = 0;
 
 const render = () => {
+  totPrice = 0;
+  totMassa = 0;
   tbody.innerHTML = "";
+
   products.forEach((item, i) => {
+    totPrice += +item.price;
+    totMassa += +item.massa;
+
     tbody.innerHTML += `
     <tr>
     <th scope="row">${i + 1}</th>
@@ -23,9 +32,14 @@ const render = () => {
     })"><i class="bi bi-pencil"></i></button></td>
     <td><button  class="btn btn-danger" onclick="delProd(${
       item.id
-    })"><i class="bi bi-trash"></i></button></td>
-     </tr>`;
+    })"><i class="bi bi-trash"></i></button></td> 
+    </tr>`;
   });
+
+  total.innerHTML = `
+  <li>Mahsulotlarning umumiy vazni: ${totMassa}</li>
+  <li>Mahsulotlarning umumiy narhi: ${totPrice}</li>
+  `;
 };
 
 fetch(`${url}?_sort=id&_order=desc`)
@@ -43,6 +57,7 @@ function editProd(id) {
         el.value = product[el.getAttribute("name")];
       });
     });
+
   toggle = true;
 }
 
@@ -51,13 +66,16 @@ function delProd(id) {
     method: "delete",
   }).then(() => {
     products = products.filter((e) => e.id !== id);
+    render();
   });
-  render();
 }
 
 const addProd = (e) => {
   e.preventDefault();
-  const product = {};
+  const product = {
+    totalprice: totPrice,
+    totalmassa: totMassa,
+  };
 
   inps.forEach((el) => {
     product[el.getAttribute("name")] = el.value;

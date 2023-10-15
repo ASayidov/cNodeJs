@@ -2,18 +2,20 @@
   "todos": [],
   "products": [
     {
-      "name": "Televizor",
-      "price": "250",
-      "massa": "3",
-      "count": "400",
-      "id": 2
+      "name": "Muzlatgich",
+      "price": "450",
+      "massa": "45",
+      "count": "15",
+      "id": 1
     },
     {
+      "totalprice": 450,
+      "totalmassa": 45,
       "name": "Noutbook",
-      "price": "650",
-      "massa": "2",
-      "count": "570",
-      "id": 3
+      "price": "740",
+      "massa": "3",
+      "count": "800",
+      "id": 2
     }
   ]
 }
