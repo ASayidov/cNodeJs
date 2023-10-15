@@ -13,15 +13,14 @@
   </head>
   <body>
     <div class="container">
-      <h1>Ro'yhatdan o'tish</h1>
-      <form onsubmit="auth(event)">
+      <h1>Tizimga kirish</h1>
+      <form onsubmit="auth(event, 'login')">
         <div class="mb-3">
-          <label for="login" class="form-label">Foydalanuvchi ismi</label>
-          <input type="text" class="form-control" name="name" id="name" />
-        </div>
-        <div class="mb-3">
-          <label for="login" class="form-label">Loginni</label>
+          <label for="login" class="form-label">Loginni kiriting</label>
           <input type="text" class="form-control" name="login" id="login" />
+          <div id="emailHelp" class="form-text">
+            Tizimga kirish uchun Login yozing
+          </div>
         </div>
         <div class="mb-3">
           <label for="password" class="form-label">Mahfiy kalit</label>
@@ -32,7 +31,7 @@
             id="password"
           />
         </div>
-        <button type="submit" class="btn btn-primary">Ro'yhatdan o'tish</button>
+        <button type="submit" class="btn btn-primary">Kirish</button>
       </form>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
