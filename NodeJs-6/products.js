@@ -72,10 +72,7 @@ function delProd(id) {
 
 const addProd = (e) => {
   e.preventDefault();
-  const product = {
-    totalprice: totPrice,
-    totalmassa: totMassa,
-  };
+  const product = {};
 
   inps.forEach((el) => {
     product[el.getAttribute("name")] = el.value;
