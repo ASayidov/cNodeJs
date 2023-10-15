@@ -1,0 +1,21 @@
+{
+  "todos": [],
+  "products": [
+    {
+      "name": "Muzlatgich",
+      "price": "450",
+      "massa": "45",
+      "count": "15",
+      "id": 1
+    },
+    {
+      "totalprice": 450,
+      "totalmassa": 45,
+      "name": "Noutbook",
+      "price": "740",
+      "massa": "3",
+      "count": "800",
+      "id": 2
+    }
+  ]
+}
