@@ -1,4 +1,12 @@
 {
   "todos": [],
-  "products": []
+  "products": [
+    {
+      "name": "Televizor",
+      "price": "250",
+      "massa": "3",
+      "count": "400",
+      "id": 2
+    }
+  ]
 }

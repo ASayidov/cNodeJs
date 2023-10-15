@@ -63,8 +63,6 @@ const addProd = (e) => {
     product[el.getAttribute("name")] = el.value;
   });
 
-  
-
   form.reset();
   if (toggle) {
     fetch(`${url}/${product.id}`, {
@@ -76,8 +74,8 @@ const addProd = (e) => {
     })
       .then((res) => res.json())
       .then((upProduct) => {
-        products = products.map((todo) => {
-          if (todo.id == upProduct.id) return upProduct;
+        products = products.map((product) => {
+          if (product.id == upProduct.id) return upProduct;
           return product;
         });
         toggle = false;
