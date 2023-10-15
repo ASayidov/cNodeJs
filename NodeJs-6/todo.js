@@ -13,9 +13,16 @@ const render = () => {
     tbody.innerHTML += `
     <tr>
     <td>${i + 1}</td>
-    <td>${item.input}</td>
-    <td><button onclick="editTodo(${item.id})">edit</button></td>
-    <td><button onclick="delTodo(${item.id})">delete</button></td>
+    <td>${item.todoname}</td>
+    <td>${item.todo}</td>
+    <td>${item.date}</td>
+    <td>${item.person}</td>
+    <td><button class="btn btn-info" onclick="editTodo(${
+      item.id
+    })"><i class="bi bi-pencil"></i></button></td>
+    <td><button  class="btn btn-danger" onclick="delTodo(${
+      item.id
+    })"><i class="bi bi-trash"></i></button></td>
      </tr>`;
   });
 };

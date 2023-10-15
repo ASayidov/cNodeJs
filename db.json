@@ -1,3 +1,18 @@
 {
-  "todos": []
+  "todos": [
+    {
+      "todoname": "Ish 1",
+      "todo": "Topshiriiqlar bajarilson",
+      "date": "2023-10-20",
+      "person": "Sardor Salomov",
+      "id": 1
+    },
+    {
+      "todoname": "Ish 2",
+      "todo": "Topshiriqni bajarish",
+      "date": "2023-10-21",
+      "person": "Axror Islomov",
+      "id": 2
+    }
+  ]
 }
