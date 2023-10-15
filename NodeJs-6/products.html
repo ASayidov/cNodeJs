@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>todo</title>
+    <title>Mahsulotlar ombori</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -18,48 +18,44 @@
   <body>
     <div class="container">
       <div class="row">
-        <h1 class="text-center">Topshiriq saxifasi</h1>
+        <h1 class="text-center">Mahsulotlar ombori</h1>
         <div class="col-4">
-          <form onsubmit="addTodos(event)" id="form-create" class="mb-3 mt-5">
+          <form onsubmit="addProd(event)" id="form-create" class="mb-3 mt-5">
             <input type="hidden" name="id" id="hid" />
             <div class="mb-3">
-              <label for="todoname" class="form-label"
-                >Topshiriq sarlavxasi</label
-              >
+              <label for="name" class="form-label">Mahsulot nomi</label>
               <input
-                name="todoname"
+                name="name"
                 type="text"
                 class="form-control"
-                placeholder="Sarlavha..."
+                placeholder="Mahsulot nomi..."
               />
             </div>
             <div class="mb-3">
-              <label for="todo" class="form-label">Topshiriq matni</label>
+              <label for="price" class="form-label">Mahsulot narxi</label>
               <input
-                name="todo"
-                type="text"
+                name="price"
+                type="number"
                 class="form-control"
-                placeholder="Topshiriq matni..."
+                placeholder="Mahsulot narxi..."
               />
             </div>
             <div class="mb-3">
-              <label for="date" class="form-label"
-                >Topshiriq tugash sanasi</label
-              >
+              <label for="massa" class="form-label">Mahsulot vazni</label>
               <input
-                name="date"
-                type="date"
+                name="massa"
+                type="number"
                 class="form-control"
-                placeholder="Topshiriq matni..."
+                placeholder="Mahsulot vazni..."
               />
             </div>
             <div class="mb-3">
-              <label for="person" class="form-label">Mas'ul xodim</label>
+              <label for="count" class="form-label">Mahsulot soni</label>
               <input
-                name="person"
-                type="text"
+                name="count"
+                type="number"
                 class="form-control"
-                placeholder="Mas'ul xodim..."
+                placeholder="Mahsulot soni..."
               />
             </div>
 
@@ -67,7 +63,7 @@
               type="submit"
               class="btn btn-outline-success d-block ms-auto"
             >
-              Save
+              Saqlash
             </button>
           </form>
         </div>
@@ -76,10 +72,10 @@
             <thead>
               <tr>
                 <th scope="col">#</th>
-                <th scope="col">Topshiriq sarlavxasi</th>
-                <th scope="col">Topshiriq matni</th>
-                <th scope="col">Topshiriq muddati</th>
-                <th scope="col">Mas'ul shaxs</th>
+                <th scope="col">Maxsulot nomi</th>
+                <th scope="col">Maxsulot narxi</th>
+                <th scope="col">Maxsulot vazni</th>
+                <th scope="col">Maxsulot soni</th>
                 <th scope="col"></th>
                 <th scope="col"></th>
               </tr>
@@ -90,6 +86,6 @@
       </div>
     </div>
 
-    <script src="./products.js"></script>
+    <script src="./todo.js"></script>
   </body>
 </html>

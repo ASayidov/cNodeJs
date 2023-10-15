@@ -12,7 +12,7 @@ const render = () => {
   todos.forEach((item, i) => {
     tbody.innerHTML += `
     <tr>
-    <td>${i + 1}</td>
+    <th>${i + 1}</th>
     <td>${item.todoname}</td>
     <td>${item.todo}</td>
     <td>${item.date}</td>
