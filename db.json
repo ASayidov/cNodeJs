@@ -7,6 +7,13 @@
       "massa": "3",
       "count": "400",
       "id": 2
+    },
+    {
+      "name": "Noutbook",
+      "price": "650",
+      "massa": "2",
+      "count": "570",
+      "id": 3
     }
   ]
 }
