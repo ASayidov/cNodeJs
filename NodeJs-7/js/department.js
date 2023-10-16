@@ -9,8 +9,12 @@ const render = () => {
             <td>${el.title}</td>
             <td>${el.createdTime}</td>
             <td>${el.status}</td>
-            <td>${el.status}</td>
-            <td>${el.status}</td>
+            <td><button class="btn btn-info" onclick="editTodo(${
+              el.id
+            })"><i class="bi bi-pencil"></i></button></td>
+              <td><button  class="btn btn-danger" onclick="delTodo(${
+                el.id
+              })"><i class="bi bi-trash"></i></button></td>
           </tr>
     `;
   });
