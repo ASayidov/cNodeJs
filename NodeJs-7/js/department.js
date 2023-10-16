@@ -9,10 +9,10 @@ const render = () => {
             <td>${el.title}</td>
             <td>${el.createdTime}</td>
             <td>${el.status}</td>
-            <td><button class="btn btn-info" onclick="editTodo(${
+            <td><button class="btn btn-info" onclick="editDep(${
               el.id
             })"><i class="bi bi-pencil"></i></button></td>
-              <td><button  class="btn btn-danger" onclick="delTodo(${
+              <td><button  class="btn btn-danger" onclick="delDep(${
                 el.id
               })"><i class="bi bi-trash"></i></button></td>
           </tr>
@@ -37,5 +37,6 @@ const addDepart = (e) => {
   axios.post(`${url}/department`, department, header).then((res) => {
     departments = [res.data, ...departments];
     form.reset();
+    render();
   });
 };
