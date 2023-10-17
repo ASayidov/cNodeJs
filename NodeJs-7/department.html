@@ -36,14 +36,17 @@
     <div class="container">
       <div class="d-flex justify-content-between mt-5">
         <h1>Bo'limlar</h1>
-        <button
-          type="button"
-          class="btn btn-primary"
-          data-bs-toggle="modal"
-          data-bs-target="#departModal"
-        >
-          Yangi bo'lim
-        </button>
+        <div class="d-flex align-items-center">
+          <div id="info"></div>
+          <button
+            type="button"
+            class="btn btn-primary"
+            data-bs-toggle="modal"
+            data-bs-target="#departModal"
+          >
+            Yangi bo'lim
+          </button>
+        </div>
       </div>
       <!-- Modal -->
       <div
@@ -102,6 +105,7 @@
           <tr>
             <th scope="col">#</th>
             <th scope="col">Nomi</th>
+            <th scope="col">Vaqti</th>
             <th scope="col">Holati</th>
             <th scope="col"></th>
             <th scope="col"></th>
