@@ -9,7 +9,7 @@ const render = () => {
         <tr>
             <th scope="row">${i + 1}</th>
             <td>${el.title}</td>
-            <td>${el.createdTime}</td>
+            <td>${getTime(el.createdTime)}</td>
             <td>${el.status}</td>
             <td><button class="btn btn-info" onclick="editDep('${
               el._id
@@ -62,3 +62,10 @@ const addDepart = (e) => {
     render();
   });
 };
+
+function getTime(date) {
+  const d = new Date(date);
+  return `${d.getHours()}:${d.getMinutes()} ${d.getDate()}/${
+    d.getMonth() + 1
+  }/${d.getFullYear()}`;
+}
