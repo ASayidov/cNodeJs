@@ -9,14 +9,27 @@ const render = () => {
         <tr>
             <th scope="row">${i + 1}</th>
             <td>${el.title}</td>
-            <td>${getTime(el.createdTime)}</td>
-            <td>${el.status}</td>
-            <td><button class="btn btn-info" onclick="editDep('${
-              el._id
-            }')"><i class="bi bi-pencil"></i></button></td>
-              <td><button  class="btn btn-danger" onclick="delDep('${
-                el._id
-              }')"><i class="bi bi-trash"></i></button></td>
+            <td>${convertDate(el.createdTime)}</td>
+            <td>
+            <button  class="btn btn-${
+              el.status == 1 ? "success" : "warning"
+            }" onclick="statDep('${el._id}')"><i class="bi bi-${
+      el.status == 1 ? "check" : "x"
+    }"></i>
+            </button>
+            </td>
+            <td>
+                <button class="btn btn-info" onclick="editDep('${
+                  el._id
+                }')"><i class="bi bi-pencil"></i>
+                </button>
+            </td>
+              <td>
+                <button  class="btn btn-danger" onclick="delDep('${
+                  el._id
+                }')"><i class="bi bi-trash"></i>
+                </button>
+              </td>
           </tr>
     `;
   });
@@ -63,7 +76,19 @@ const addDepart = (e) => {
   });
 };
 
-function getTime(date) {
+const statDep = (id) => {
+  axios.get(`${url}/department/change/${id}`, header).then((res) => {
+    console.log(res.data);
+    departments = departments.map((dep) => {
+      if (dep._id == res.data._id) return {...res.data}
+        return dep;
+      
+    });
+    render();
+  });
+};
+
+function convertDate(date) {
   const d = new Date(date);
   return `${d.getHours()}:${d.getMinutes()} ${d.getDate()}/${
     d.getMonth() + 1
