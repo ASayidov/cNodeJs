@@ -13,26 +13,33 @@
   </head>
   <body>
     <div class="container">
-      <h1>Tizimga kirish</h1>
-      <form onsubmit="auth(event, 'login')">
-        <div class="mb-3">
-          <label for="login" class="form-label">Loginni kiriting</label>
-          <input type="text" class="form-control" name="login" id="login" />
-          <div id="emailHelp" class="form-text">
-            Tizimga kirish uchun Login yozing
+      <div class="form-group col-md-5 text-center">
+        <h1>Tizimga kirish</h1>
+        <form onsubmit="auth(event, 'login')">
+          <div class="mb-3">
+            <label for="login" class="form-label">Loginni kiriting</label>
+            <input type="text" class="form-control" name="login" id="login" />
+            <div id="emailHelp" class="form-text">
+              Tizimga kirish uchun Login yozing
+            </div>
           </div>
-        </div>
-        <div class="mb-3">
-          <label for="password" class="form-label">Mahfiy kalit</label>
-          <input
-            name="password"
-            type="password"
-            class="form-control"
-            id="password"
-          />
-        </div>
-        <button type="submit" class="btn btn-primary">Kirish</button>
-      </form>
+          <div class="mb-3">
+            <label for="password" class="form-label">Mahfiy kalit</label>
+            <input
+              name="password"
+              type="password"
+              class="form-control"
+              id="password"
+            />
+          </div>
+          <button type="button" class="btn btn-success">
+            <a class="text-decoration-none text-light" href="./reg.html"
+              >Ro'yhatdan o'tish</a
+            >
+          </button>
+          <button type="submit" class="btn btn-primary">Kirish</button>
+        </form>
+      </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="./js/reg.js"></script>

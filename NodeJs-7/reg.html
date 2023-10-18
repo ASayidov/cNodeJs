@@ -13,27 +13,36 @@
   </head>
   <body>
     <div class="container">
-      <h1>Ro'yhatdan o'tish</h1>
-      <form onsubmit="auth(event)">
-        <div class="mb-3">
-          <label for="login" class="form-label">Foydalanuvchi ismi</label>
-          <input type="text" class="form-control" name="name" id="name" />
-        </div>
-        <div class="mb-3">
-          <label for="login" class="form-label">Loginni</label>
-          <input type="text" class="form-control" name="login" id="login" />
-        </div>
-        <div class="mb-3">
-          <label for="password" class="form-label">Mahfiy kalit</label>
-          <input
-            name="password"
-            type="password"
-            class="form-control"
-            id="password"
-          />
-        </div>
-        <button type="submit" class="btn btn-primary">Ro'yhatdan o'tish</button>
-      </form>
+      <div class="form-group col-md-5 text-center">
+        <h1>Ro'yhatdan o'tish</h1>
+        <form onsubmit="auth(event)">
+          <div class="mb-3">
+            <label for="login" class="form-label">Foydalanuvchi ismi</label>
+            <input type="text" class="form-control" name="name" id="name" />
+          </div>
+          <div class="mb-3">
+            <label for="login" class="form-label">Loginni</label>
+            <input type="text" class="form-control" name="login" id="login" />
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label">Mahfiy kalit</label>
+            <input
+              name="password"
+              type="password"
+              class="form-control"
+              id="password"
+            />
+          </div>
+          <button type="submit" class="btn btn-primary">
+            Ro'yhatdan o'tish
+          </button>
+          <button type="submit" class="btn btn-primary">
+            <a class="text-decoration-none text-light" href="./login.html"
+              >Kirish</a
+            >
+          </button>
+        </form>
+      </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="./js/reg.js"></script>
