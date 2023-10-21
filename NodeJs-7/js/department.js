@@ -7,7 +7,7 @@ const modal = new bootstrap.Modal("#departModal", {
 
 let toggle = true;
 
-let _id;
+let _id; //temp
 
 console.log(form);
 let departments = [];
@@ -117,7 +117,7 @@ const saveDep = (depValue) => {
     form.reset();
     render();
   });
-
+  _id = null;
   toggle = true;
 };
 
