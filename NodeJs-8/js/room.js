@@ -5,6 +5,9 @@ const modal = new bootstrap.Modal("#roomModal", {
   keyboard: false,
 });
 
+document.getElementById("roomModal").addEventListener("hide.bs.modal", () => {
+  form.reset();
+});
 let toggle = true;
 let _id; //temp
 
@@ -16,7 +19,9 @@ const render = () => {
     tbody.innerHTML += `
         <tr>
             <th scope="row">${i + 1}</th>
-            <td>${el.title}</td>
+            <td>${el.number}</td>
+            <td>${el.maxcount}</td>
+            <td>${el.department}</td>
             <td>${convertDate(el.createdTime)}</td>
             <td>
             <button  class="btn btn-${
@@ -46,6 +51,19 @@ axios.get(`${url}/room`, header).then((res) => {
   rooms = [...res.data];
   render();
 });
+let depList = document.getElementById("depList");
+
+axios.get(`${url}/department`, header).then((res) => {
+  res.data.forEach((dep) => {
+    if (dep.status == 1) {
+      depList.innerHTML += `
+    <option value="${dep._id}">${dep.title}</option>
+        `;
+    }
+  });
+
+  console.log(res.data);
+});
 
 const delRoom = (id) => {
   if (confirm("Qaroringiz qat'iymi?")) {
@@ -68,6 +86,8 @@ const addRoom = (e) => {
   let data = new FormData(e.target);
   data.forEach((value, name) => (room[name] = value));
 
+  console.log(room);
+
   if (toggle) {
     axios.post(`${url}/room`, room, header).then((res) => {
       info.innerHTML = `
@@ -80,7 +100,7 @@ const addRoom = (e) => {
       render();
     });
   } else {
-    saveDep(room);
+    saveRoom(room);
   }
 };
 
@@ -93,9 +113,7 @@ const getRoom = (id) => {
     });
 
     toggle = false;
-    for (const key in res.data) {
-      //console.log(key, res.data[key]);
-    }
+
     modal.show();
   });
 };

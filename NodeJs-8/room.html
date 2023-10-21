@@ -61,18 +61,37 @@
             <div class="modal-body">
               <form id="form" onsubmit="addRoom(event)">
                 <div class="mb-3">
-                  <label for="title" class="form-label"
-                    >Xona nomi</label
-                  >
+                  <label for="number" class="form-label">Xona raqami</label>
                   <input
-                    name="title"
-                    type="text"
+                    name="number"
+                    type="number"
                     class="form-control"
-                    name="title"
-                    id="title"
+                    id="number"
                     required
                   />
                 </div>
+                <div class="mb-3">
+                  <label for="maxcount" class="form-label">Xona sig'imi</label>
+                  <input
+                    name="maxcount"
+                    type="number"
+                    class="form-control"
+                    id="maxcount"
+                    required
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="maxcount" class="form-label">Bo'lim</label>
+                  <select
+                    class="form-select"
+                    aria-label="Default select example"
+                    id="depList"
+                    name="department"
+                  >
+                    <option selected>Ro'yxatdan tanlang</option>
+                  </select>
+                </div>
+
                 <div class="modal-footer">
                   <button
                     type="button"
@@ -98,8 +117,10 @@
         <thead>
           <tr>
             <th scope="col">#</th>
-            <th scope="col">Nomi</th>
-            <th scope="col">Vaqti</th>
+            <th scope="col">Xona raqami</th>
+            <th scope="col">Sig'imlilik</th>
+            <th scope="col">Bo'lim</th>
+            <th scope="col">Qo'shilgan vaqti</th>
             <th scope="col">Holati</th>
             <th scope="col"></th>
           </tr>
