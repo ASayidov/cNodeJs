@@ -24,3 +24,30 @@ function convertDate(date) {
     d.getMonth() + 1
   }/${d.getFullYear()}`;
 }
+
+const menu = [
+  {
+    title: "Bosh sahifa",
+    link: "./index.html",
+  },
+  {
+    title: "Bo'limlar",
+    link: "./department.html",
+  },
+  {
+    title: "Mutaxasislar",
+    link: "./spec.html",
+  },
+];
+
+let ulMenu = document.querySelector("nav ul");
+
+ulMenu.innerHTML = "";
+
+menu.forEach((item) => {
+  ulMenu.innerHTML += `
+    <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="${item.link}">${item.title}</a>
+    </li>
+  `;
+});
