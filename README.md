@@ -1,9 +1,6 @@
-# cNodeJs
-js - #7
+js - #8
 
-- axios
-- hospital loyihasi
-- ro'yhatdan o'tish
-- tizimga kirish
-- foydalanuvchini tekshirish
-- bo'lim sahifasi. qo'shish/o'chirish/holatni o'zgartirish.
+- department malumotlarni o'zgaritirish
+- menuni massivdan render
+- room. CRUD tayyor
+- spec. CRUD tayyor.
