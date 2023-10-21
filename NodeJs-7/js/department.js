@@ -6,10 +6,8 @@ const modal = new bootstrap.Modal("#departModal", {
 });
 
 let toggle = true;
-
 let _id; //temp
 
-console.log(form);
 let departments = [];
 let department = {};
 const render = () => {
