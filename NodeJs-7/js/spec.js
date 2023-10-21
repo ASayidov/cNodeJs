@@ -1,5 +1,5 @@
 const tbody = document.querySelector("tbody");
-const info = document.getElementById("info") || null;
+
 let departments = [];
 let department = {};
 const render = () => {
@@ -60,7 +60,7 @@ const addSpec = (e) => {
 
   let form = e.target;
   let data = new FormData(form);
-  //let department = {};
+
   data.forEach((value, name) => (department[name] = value));
   console.log(department);
 
@@ -86,10 +86,3 @@ const statSpec = (id) => {
     render();
   });
 };
-
-function convertDate(date) {
-  const d = new Date(date);
-  return `${d.getHours()}:${d.getMinutes()} ${d.getDate()}/${
-    d.getMonth() + 1
-  }/${d.getFullYear()}`;
-}

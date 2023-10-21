@@ -1,5 +1,15 @@
 const tbody = document.querySelector("tbody");
-const info = document.getElementById("info") || null;
+const inputs = document.querySelectorAll("#form [name]");
+const form = document.getElementById("form");
+const modal = new bootstrap.Modal("#departModal", {
+  keyboard: false,
+});
+
+let toggle = true;
+
+let _id;
+
+console.log(form);
 let departments = [];
 let department = {};
 const render = () => {
@@ -18,18 +28,17 @@ const render = () => {
     }"></i>
             </button>
             </td>
-            <td>
-                <button class="btn btn-info" onclick="editDep('${
+            <td class="text-end ">
+                <button class="btn btn-info" onclick="getDep('${
                   el._id
                 }')"><i class="bi bi-pencil"></i>
                 </button>
-            </td>
-              <td>
                 <button  class="btn btn-danger" onclick="delDep('${
                   el._id
                 }')"><i class="bi bi-trash"></i>
                 </button>
-              </td>
+            </td>
+             
           </tr>
     `;
   });
@@ -58,39 +67,67 @@ const delDep = (id) => {
 const addDepart = (e) => {
   e.preventDefault();
 
-  let form = e.target;
-  let data = new FormData(form);
-  //let department = {};
+  let data = new FormData(e.target);
   data.forEach((value, name) => (department[name] = value));
-  console.log(department);
 
-  axios.post(`${url}/department`, department, header).then((res) => {
+  if (toggle) {
+    axios.post(`${url}/department`, department, header).then((res) => {
+      info.innerHTML = `
+      <div class="alert alert-success" role="alert">Yangi bo'lim qo'shildi</div>`;
+      setTimeout(() => {
+        info.innerHTML = "";
+      }, 2000);
+      departments = [res.data, ...departments];
+      form.reset();
+      render();
+    });
+  } else {
+    saveDep(department);
+  }
+};
+
+const getDep = (id) => {
+  //edit ni bosilganda inputiga bosilgan itemni ma'lumotini olib kelib olish
+  axios.get(`${url}/department/${id}`, header).then((res) => {
+    _id = id;
+    inputs.forEach((itemInput) => {
+      itemInput.value = res.data[itemInput.getAttribute("name")];
+    });
+
+    toggle = false;
+    for (const key in res.data) {
+      //console.log(key, res.data[key]);
+    }
+    modal.show();
+  });
+};
+
+const saveDep = (depValue) => {
+  axios.put(`${url}/department`, { ...depValue, _id }, header).then((res) => {
+    //_id: _id холати битта килиб ёзилди биз саклаган ва бекэндники
     info.innerHTML = `
-    <div class="alert alert-success" role="alert">Yangi bo'lim qo'shildi</div>`;
+    <div class="alert alert-success" role="alert">Bo'lim yangilandi</div>`;
     setTimeout(() => {
       info.innerHTML = "";
     }, 2000);
-    departments = [res.data, ...departments];
+    departments = departments.map((dep) => {
+      if (dep._id == _id) return { ...res.data };
+      return dep;
+    });
     form.reset();
     render();
   });
+
+  toggle = true;
 };
 
 const statDep = (id) => {
   axios.get(`${url}/department/change/${id}`, header).then((res) => {
     console.log(res.data);
     departments = departments.map((dep) => {
-      if (dep._id == res.data._id) return {...res.data}
-        return dep;
-      
+      if (dep._id == res.data._id) return { ...res.data };
+      return dep;
     });
     render();
   });
 };
-
-function convertDate(date) {
-  const d = new Date(date);
-  return `${d.getHours()}:${d.getMinutes()} ${d.getDate()}/${
-    d.getMonth() + 1
-  }/${d.getFullYear()}`;
-}
