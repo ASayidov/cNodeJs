@@ -21,17 +21,17 @@ const render = () => {
             <td>
             <button  class="btn btn-${
               el.status == 1 ? "success" : "warning"
-            }" onclick="statSpec('${el._id}')"><i class="bi bi-${
+            }" onclick="statRoom('${el._id}')"><i class="bi bi-${
       el.status == 1 ? "check" : "x"
     }"></i>
             </button>
             </td>
             <td class="text-end ">
-                <button class="btn btn-info" onclick="getSpec('${
+                <button class="btn btn-info" onclick="getRoom('${
                   el._id
                 }')"><i class="bi bi-pencil"></i>
                 </button>
-                <button  class="btn btn-danger" onclick="delSpec('${
+                <button  class="btn btn-danger" onclick="delRoom('${
                   el._id
                 }')"><i class="bi bi-trash"></i>
                 </button>
@@ -47,7 +47,7 @@ axios.get(`${url}/spec`, header).then((res) => {
   render();
 });
 
-const delSpec = (id) => {
+const delRoom = (id) => {
   if (confirm("Qaroringiz qat'iymi?")) {
     axios.delete(`${url}/spec/${id}`, header).then((res) => {
       console.log(res.data);
@@ -62,7 +62,7 @@ const delSpec = (id) => {
   }
 };
 
-const addSpec = (e) => {
+const addRoom = (e) => {
   e.preventDefault();
 
   let data = new FormData(e.target);
@@ -80,11 +80,11 @@ const addSpec = (e) => {
       render();
     });
   } else {
-    saveSpec(spec);
+    saveDep(spec);
   }
 };
 
-const getSpec = (id) => {
+const getRoom = (id) => {
   //edit ni bosilganda inputiga bosilgan itemni ma'lumotini olib kelib olish
   axios.get(`${url}/spec/${id}`, header).then((res) => {
     _id = id;
@@ -100,7 +100,7 @@ const getSpec = (id) => {
   });
 };
 
-const saveSpec = (depValue) => {
+const saveRoom = (depValue) => {
   axios.put(`${url}/spec`, { ...depValue, _id }, header).then((res) => {
     //_id: _id холати битта килиб ёзилди биз саклаган ва бекэндники
     info.innerHTML = `
@@ -119,7 +119,7 @@ const saveSpec = (depValue) => {
   });
 };
 
-const statSpec = (id) => {
+const statRoom = (id) => {
   axios.get(`${url}/spec/change/${id}`, header).then((res) => {
     console.log(res.data);
     specs = specs.map((dep) => {
