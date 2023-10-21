@@ -114,11 +114,11 @@ const saveDep = (depValue) => {
       if (dep._id == _id) return { ...res.data };
       return dep;
     });
+    _id = null;
+    toggle = true;
     form.reset();
     render();
   });
-  _id = null;
-  toggle = true;
 };
 
 const statDep = (id) => {
