@@ -1,10 +1,18 @@
 const tbody = document.querySelector("tbody");
+const inputs = document.querySelectorAll("#form [name]");
+const form = document.getElementById("form");
+const modal = new bootstrap.Modal("#departModal", {
+  keyboard: false,
+});
 
-let departments = [];
-let department = {};
+let toggle = true;
+let _id; //temp
+
+let specs = [];
+let spec = {};
 const render = () => {
   tbody.innerHTML = "";
-  departments.forEach((el, i) => {
+  specs.forEach((el, i) => {
     tbody.innerHTML += `
         <tr>
             <th scope="row">${i + 1}</th>
@@ -18,25 +26,24 @@ const render = () => {
     }"></i>
             </button>
             </td>
-            <td>
-                <button class="btn btn-info" onclick="editDep('${
+            <td class="text-end ">
+                <button class="btn btn-info" onclick="getDep('${
                   el._id
                 }')"><i class="bi bi-pencil"></i>
                 </button>
-            </td>
-              <td>
                 <button  class="btn btn-danger" onclick="delDep('${
                   el._id
                 }')"><i class="bi bi-trash"></i>
                 </button>
-              </td>
+            </td>
+             
           </tr>
     `;
   });
 };
 
 axios.get(`${url}/spec`, header).then((res) => {
-  departments = [...res.data];
+  specs = [...res.data];
   render();
 });
 
@@ -44,10 +51,10 @@ const delDep = (id) => {
   if (confirm("Qaroringiz qat'iymi?")) {
     axios.delete(`${url}/spec/${id}`, header).then((res) => {
       console.log(res.data);
-      departments = departments.filter((dep) => dep._id !== id);
+      specs = specs.filter((dep) => dep._id !== id);
       render();
       info.innerHTML = `
-      <div class="alert alert-warning" role="alert">Bo'lim o'chirildi</div>`;
+      <div class="alert alert-warning" role="alert">Mutaxasislik o'chirildi</div>`;
       setTimeout(() => {
         info.innerHTML = "";
       }, 2000);
@@ -55,31 +62,67 @@ const delDep = (id) => {
   }
 };
 
-const addSpec = (e) => {
+const addDepart = (e) => {
   e.preventDefault();
 
-  let form = e.target;
-  let data = new FormData(form);
+  let data = new FormData(e.target);
+  data.forEach((value, name) => (spec[name] = value));
 
-  data.forEach((value, name) => (department[name] = value));
-  console.log(department);
+  if (toggle) {
+    axios.post(`${url}/spec`, spec, header).then((res) => {
+      info.innerHTML = `
+      <div class="alert alert-success" role="alert">Yangi mutaxasislik qo'shildi</div>`;
+      setTimeout(() => {
+        info.innerHTML = "";
+      }, 2000);
+      specs = [res.data, ...specs];
+      form.reset();
+      render();
+    });
+  } else {
+    saveDep(spec);
+  }
+};
 
-  axios.post(`${url}/spec`, department, header).then((res) => {
+const getDep = (id) => {
+  //edit ni bosilganda inputiga bosilgan itemni ma'lumotini olib kelib olish
+  axios.get(`${url}/spec/${id}`, header).then((res) => {
+    _id = id;
+    inputs.forEach((itemInput) => {
+      itemInput.value = res.data[itemInput.getAttribute("name")];
+    });
+
+    toggle = false;
+    for (const key in res.data) {
+      //console.log(key, res.data[key]);
+    }
+    modal.show();
+  });
+};
+
+const saveDep = (depValue) => {
+  axios.put(`${url}/spec`, { ...depValue, _id }, header).then((res) => {
+    //_id: _id холати битта килиб ёзилди биз саклаган ва бекэндники
     info.innerHTML = `
-    <div class="alert alert-success" role="alert">Yangi bo'lim qo'shildi</div>`;
+    <div class="alert alert-success" role="alert">Mutaxasislik yangilandi</div>`;
     setTimeout(() => {
       info.innerHTML = "";
     }, 2000);
-    departments = [res.data, ...departments];
+    specs = specs.map((dep) => {
+      if (dep._id == _id) return { ...res.data };
+      return dep;
+    });
+    _id = null;
+    toggle = true;
     form.reset();
     render();
   });
 };
 
-const statSpec = (id) => {
+const statDep = (id) => {
   axios.get(`${url}/spec/change/${id}`, header).then((res) => {
     console.log(res.data);
-    departments = departments.map((dep) => {
+    specs = specs.map((dep) => {
       if (dep._id == res.data._id) return { ...res.data };
       return dep;
     });

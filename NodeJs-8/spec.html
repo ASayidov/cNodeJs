@@ -20,31 +20,22 @@
       <div class="container">
         <a class="navbar-brand" href="/">Hospital-CRM</a>
         <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="./index.html"
-                >Bosh sahifa</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./department.html">Bo'limlar</a>
-            </li>
-          </ul>
+          <ul class="navbar-nav"></ul>
         </div>
       </div>
     </nav>
     <div class="container">
+      <div id="info" class="position-absolute top-10 start-50"></div>
       <div class="d-flex justify-content-between mt-5">
-        <h1>Bo'limlar</h1>
+        <h1>Mutaxasisliklar</h1>
         <div class="d-flex align-items-center">
-          <div id="info"></div>
           <button
             type="button"
             class="btn btn-primary mx-3"
             data-bs-toggle="modal"
             data-bs-target="#departModal"
           >
-            Yangi bo'lim
+            Yangi mutaxasislik
           </button>
         </div>
       </div>
@@ -59,7 +50,9 @@
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h1 class="modal-title fs-5" id="newDepart">Yangi bo'lim</h1>
+              <h1 class="modal-title fs-5" id="newDepart">
+                Yangi mutaxasislik
+              </h1>
               <button
                 type="button"
                 class="btn-close"
@@ -68,10 +61,13 @@
               ></button>
             </div>
             <div class="modal-body">
-              <form onsubmit="addSpec(event)">
+              <form id="form" onsubmit="addDepart(event)">
                 <div class="mb-3">
-                  <label for="title" class="form-label">Bo'lim nomi</label>
+                  <label for="title" class="form-label"
+                    >Mutaxasislik nomi</label
+                  >
                   <input
+                    name="title"
                     type="text"
                     class="form-control"
                     name="title"
@@ -108,17 +104,9 @@
             <th scope="col">Vaqti</th>
             <th scope="col">Holati</th>
             <th scope="col"></th>
-            <th scope="col"></th>
           </tr>
         </thead>
-        <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-          </tr>
-        </tbody>
+        <tbody></tbody>
       </table>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
