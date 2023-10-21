@@ -38,6 +38,10 @@ const menu = [
     title: "Mutaxasislar",
     link: "./spec.html",
   },
+  {
+    title: "Xonalar",
+    link: "./room.html",
+  },
 ];
 
 let ulMenu = document.querySelector("nav ul");

@@ -1,7 +1,7 @@
 const tbody = document.querySelector("tbody");
 const inputs = document.querySelectorAll("#form [name]");
 const form = document.getElementById("form");
-const modal = new bootstrap.Modal("#departModal", {
+const modal = new bootstrap.Modal("#specModal", {
   keyboard: false,
 });
 
