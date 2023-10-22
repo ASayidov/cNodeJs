@@ -4,8 +4,8 @@ const form = document.getElementById("form");
 const modal = new bootstrap.Modal("#roomModal", {
   keyboard: false,
 });
-
-document.getElementById("roomModal").addEventListener("hide.bs.modal", () => {
+let roomModal = document.getElementById("roomModal");
+roomModal.addEventListener("hidden.bs.modal", () => {
   form.reset();
 });
 let toggle = true;
