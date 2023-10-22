@@ -51,24 +51,21 @@ axios.get(`${url}/room`, header).then((res) => {
   rooms = [...res.data];
   render();
 });
+
 let depList = document.getElementById("depList");
 
 axios.get(`${url}/department`, header).then((res) => {
   res.data.forEach((dep) => {
     if (dep.status == 1) {
       depList.innerHTML += `
-    <option value="${dep._id}">${dep.title}</option>
-        `;
+    <option value="${dep._id}">${dep.title}</option>`;
     }
   });
-
-  console.log(res.data);
 });
 
 const delRoom = (id) => {
   if (confirm("Qaroringiz qat'iymi?")) {
     axios.delete(`${url}/room/${id}`, header).then((res) => {
-      console.log(res.data);
       rooms = rooms.filter((dep) => dep._id !== id);
       render();
       info.innerHTML = `
