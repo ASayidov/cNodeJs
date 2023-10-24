@@ -26,17 +26,17 @@ const render = () => {
             <td>
             <button  class="btn btn-${
               el.status == 1 ? "success" : "warning"
-            }" onclick="statRoom('${el._id}')"><i class="bi bi-${
+            }" onclick="statDoctor('${el._id}')"><i class="bi bi-${
       el.status == 1 ? "check" : "x"
     }"></i>
             </button>
             </td>
             <td class="text-end ">
-                <button class="btn btn-info" onclick="getRoom('${
+                <button class="btn btn-info" onclick="getDoctor('${
                   el._id
                 }')"><i class="bi bi-pencil"></i>
                 </button>
-                <button  class="btn btn-danger" onclick="delRoom('${
+                <button  class="btn btn-danger" onclick="delDoctor('${
                   el._id
                 }')"><i class="bi bi-trash"></i>
                 </button>
@@ -53,6 +53,17 @@ axios.get(`${url}/doctor`, header).then((res) => {
 });
 
 let depList = document.getElementById("depList");
+let specList = document.getElementById("specList");
+let placeSelect = document.getElementById("place");
+
+axios.get(`${url}/spec`, header).then((res) => {
+  res.data.forEach((spe) => {
+    if (spe.status == 1) {
+      specList.innerHTML += `
+      <option value="${spe._id}">${spe.title}</option>`;
+    }
+  });
+});
 
 axios.get(`${url}/department`, header).then((res) => {
   res.data.forEach((dep) => {
@@ -63,7 +74,13 @@ axios.get(`${url}/department`, header).then((res) => {
   });
 });
 
-const delRoom = (id) => {
+regions.forEach((region) => {
+  placeSelect.innerHTML += `
+  <option value="${region.id}">${region.name}</option>
+  `;
+});
+
+const delDoctor = (id) => {
   if (confirm("Qaroringiz qat'iymi?")) {
     axios.delete(`${url}/doctor/${id}`, header).then((res) => {
       doctors = doctors.filter((dep) => dep._id !== id);
@@ -77,7 +94,7 @@ const delRoom = (id) => {
   }
 };
 
-const addRoom = (e) => {
+const addDoctor = (e) => {
   e.preventDefault();
 
   let data = new FormData(e.target);
@@ -97,11 +114,11 @@ const addRoom = (e) => {
       render();
     });
   } else {
-    saveRoom(doctor);
+    saveDoctor(doctor);
   }
 };
 
-const getRoom = (id) => {
+const getDoctor = (id) => {
   //edit ni bosilganda inputiga bosilgan itemni ma'lumotini olib kelib olish
   axios.get(`${url}/doctor/${id}`, header).then((res) => {
     _id = id;
@@ -115,7 +132,7 @@ const getRoom = (id) => {
   });
 };
 
-const saveRoom = (depValue) => {
+const saveDoctor = (depValue) => {
   axios.put(`${url}/doctor`, { ...depValue, _id }, header).then((res) => {
     //_id: _id холати битта килиб ёзилди биз саклаган ва бекэндники
     info.innerHTML = `
@@ -134,7 +151,7 @@ const saveRoom = (depValue) => {
   });
 };
 
-const statRoom = (id) => {
+const statDoctor = (id) => {
   axios.get(`${url}/doctor/change/${id}`, header).then((res) => {
     console.log(res.data);
     doctors = doctors.map((dep) => {

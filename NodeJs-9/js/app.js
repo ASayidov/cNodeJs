@@ -42,6 +42,10 @@ const menu = [
     title: "Xonalar",
     link: "./room.html",
   },
+  {
+    title: "Shifokorlar",
+    link: "./doctor.html",
+  },
 ];
 
 let ulMenu = document.querySelector("nav ul");
