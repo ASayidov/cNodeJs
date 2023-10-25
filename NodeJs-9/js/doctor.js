@@ -84,13 +84,9 @@ regions.forEach((region) => {
 
 let district = document.getElementById("district");
 
-// districts.forEach((distr) => {
-//   district.innerHTML += `
-//   <option value="${distr.id}">${distr.name}</option>
-//   `;
-// });
-
 const getDistricts = (e) => {
+  district.innerHTML = "";
+  district.innerHTML = `<option selected>Ro'yxatdan tanlang</option>`;
   districts.forEach((distr) => {
     if (distr.region_id == e.target.value) {
       district.innerHTML += `<option value="${distr.id}">${distr.name}</option>`;
