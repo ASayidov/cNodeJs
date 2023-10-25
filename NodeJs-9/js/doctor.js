@@ -54,7 +54,6 @@ axios.get(`${url}/doctor`, header).then((res) => {
 
 let depList = document.getElementById("depList");
 let specList = document.getElementById("specList");
-let placeSelect = document.getElementById("place");
 
 axios.get(`${url}/spec`, header).then((res) => {
   res.data.forEach((spe) => {
@@ -74,11 +73,30 @@ axios.get(`${url}/department`, header).then((res) => {
   });
 });
 
+let placeSelect = document.getElementById("place");
+let regionSelect = document.getElementById("region");
+
 regions.forEach((region) => {
-  placeSelect.innerHTML += `
-  <option value="${region.id}">${region.name}</option>
-  `;
+  let opt = `<option value="${region.id}">${region.name}</option>`;
+  placeSelect.innerHTML += opt;
+  regionSelect.innerHTML += opt;
 });
+
+let district = document.getElementById("district");
+
+// districts.forEach((distr) => {
+//   district.innerHTML += `
+//   <option value="${distr.id}">${distr.name}</option>
+//   `;
+// });
+
+const getDistricts = (e) => {
+  districts.forEach((distr) => {
+    if (distr.region_id == e.target.value) {
+      district.innerHTML += `<option value="${distr.id}">${distr.name}</option>`;
+    }
+  });
+};
 
 const delDoctor = (id) => {
   if (confirm("Qaroringiz qat'iymi?")) {

@@ -70,6 +70,44 @@
                 <input name="birthday" type="text" data-maska="+998 ## ###-##-##" class="form-control" id="birthday"
                   required />
               </div>
+              <label class="form-label">Jinsi:</label>
+              <div class="mb-3 d-flex">
+
+                <div class="form-check">
+                  <input class="form-check-input" value="0" type="radio" name="gender" id="erkak">
+                  <label class="form-check-label" for="erkak">
+                    Erkak
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input ms-1" value="1" type="radio" name="gender" id="ayol" checked>
+                  <label class="form-check-label" for="ayol">
+                    Ayol
+                  </label>
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="education" class="form-label">Ma'lumoti:</label>
+                <select class="form-select" aria-label="Default select example" id="education" name="education">
+                  <option selected>Ro'yxatdan tanlang</option>
+                  <option value="O'rta maxsus">O'rta maxsus</option>
+                  <option value="Oliy ma'lumotli">Oliy ma'lumotli</option>
+                  <option value="Magistr">Magistr</option>
+                  <option value="Doctor">Doctor</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label for="region" class="form-label">Yashash viloyati:</label>
+                <select class="form-select" aria-label="Default select example" onchange="getDistricts(event)" id="region" name="region">
+                  <option selected>Ro'yxatdan tanlang</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label for="district" class="form-label">Yashash shahar/tumani:</label>
+                <select class="form-select" aria-label="Default select example" id="district" name="district">
+                  <option selected>Ro'yxatdan tanlang</option>
+                </select>
+              </div>
 
 
               <div class="modal-footer">
