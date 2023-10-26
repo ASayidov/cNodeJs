@@ -1,6 +1,8 @@
 let url = "https://hospital.bookblogs.uz";
 let token;
 let header;
+let headerFile;
+
 const info = document.getElementById("info") || null;
 
 if (localStorage.getItem("hospital-token")) {
@@ -10,6 +12,14 @@ if (localStorage.getItem("hospital-token")) {
       authorization: `Bearer ${token}`,
     },
   };
+
+  headerFile = {
+    headers: {
+      "Content-type": "multipart/form-data",
+      authorization: `Bearer ${token}`,
+    },
+  };
+
   axios.post(`${url}/auth/checkuser`, {}, header).catch((e) => {
     alert("Sizga bu saxifaga o'tishga ruxsat yo'q");
     window.location.href = "login.html";

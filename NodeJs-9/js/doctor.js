@@ -19,9 +19,13 @@ const render = () => {
     tbody.innerHTML += `
         <tr>
             <th scope="row">${i + 1}</th>
-            <td>${el.number}</td>
-            <td>${el.maxcount}</td>
+            <td><img src="${url}/${el.file.at(0)}" width="90"></td>
+          
+            <td>${el.name}</td>
             <td>${el.department}</td>
+            <td>${el.spec}</td>
+            <td>${el.phone}</td>
+            <td>${worktimeList[el.worktime]}</td>
             <td>${convertDate(el.createdTime)}</td>
             <td>
             <button  class="btn btn-${
@@ -84,15 +88,29 @@ regions.forEach((region) => {
 
 let district = document.getElementById("district");
 
-const getDistricts = (e) => {
+const getDistricts = (id) => {
   district.innerHTML = "";
   district.innerHTML = `<option selected>Ro'yxatdan tanlang</option>`;
   districts.forEach((distr) => {
-    if (distr.region_id == e.target.value) {
+    if (distr.region_id == id) {
       district.innerHTML += `<option value="${distr.id}">${distr.name}</option>`;
     }
   });
 };
+
+const familyList = ["Turmush qurgan", "Turmush qurmagan"];
+let familySelect = document.getElementById("family");
+
+familyList.forEach((fam, index) => {
+  familySelect.innerHTML += `<option value="${index}">${fam}</option>`;
+});
+
+const worktimeList = ["O'rindosh", "Yarim stavka", "To'liq stavka", "Soatbay"];
+let worktimeSelect = document.getElementById("worktime");
+
+worktimeList.forEach((fam, index) => {
+  worktimeSelect.innerHTML += `<option value="${index}">${fam}</option>`;
+});
 
 const delDoctor = (id) => {
   if (confirm("Qaroringiz qat'iymi?")) {
@@ -116,8 +134,12 @@ const addDoctor = (e) => {
 
   console.log(doctor);
 
+  let fileInput = document.getElementById("file");
+
+  console.log(fileInput.files[0]);
+
   if (toggle) {
-    axios.post(`${url}/doctor`, doctor, header).then((res) => {
+    axios.post(`${url}/doctor`, doctor, headerFile).then((res) => {
       info.innerHTML = `
       <div class="alert alert-success" role="alert">Yangi shifokor qo'shildi</div>`;
       setTimeout(() => {
@@ -137,6 +159,21 @@ const getDoctor = (id) => {
   axios.get(`${url}/doctor/${id}`, header).then((res) => {
     _id = id;
     inputs.forEach((itemInput) => {
+      if (itemInput.name == "region") {
+        itemInput.value = res.data[itemInput.getAttribute("name")];
+        getDistricts(res.data[itemInput.getAttribute("name")]);
+
+        return;
+      }
+      if (itemInput.type == "file") return;
+      if (
+        itemInput.type == "radio" &&
+        itemInput.value == res.data[itemInput.getAttribute("name")]
+      ) {
+        itemInput.checked = true;
+        return;
+      }
+
       itemInput.value = res.data[itemInput.getAttribute("name")];
     });
 
@@ -147,7 +184,7 @@ const getDoctor = (id) => {
 };
 
 const saveDoctor = (depValue) => {
-  axios.put(`${url}/doctor`, { ...depValue, _id }, header).then((res) => {
+  axios.put(`${url}/doctor`, { ...depValue, _id }, headerFile).then((res) => {
     //_id: _id холати битта килиб ёзилди биз саклаган ва бекэндники
     info.innerHTML = `
     <div class="alert alert-success" role="alert">Shifikor ma'lumotlari yangilandi</div>`;

@@ -48,8 +48,8 @@
                 </div>
                 <div class="col-6">
                   <div class="mb-3">
-                    <label for="birthday" class="form-label">Telefon raqami</label>
-                    <input name="birthday" type="text" data-maska="+998 ## ###-##-##" class="form-control" id="birthday"
+                    <label for="phone" class="form-label">Telefon raqami</label>
+                    <input name="phone" type="text" data-maska="+998 ## ###-##-##" class="form-control" id="phone"
                       required />
                   </div>
                 </div>
@@ -74,17 +74,17 @@
                       id="familyphone" required />
                   </div>
                 </div>
-                <div class="col-6"><label class="form-label">Jinsi:</label>  
+                <div class="col-6"><label class="form-label">Jinsi:</label>
                   <div class="mb-3 d-flex">
 
                     <div class="form-check">
                       <input class="form-check-input" value="0" type="radio" name="gender" id="erkak">
-                      <label class="form-check-label" for="erkak">
+                      <label class="form-check-label" for="erkak" checked>
                         Erkak
                       </label>
                     </div>
                     <div class="form-check">
-                      <input class="form-check-input ms-1" value="1" type="radio" name="gender" id="ayol" checked>
+                      <input class="form-check-input ms-1" value="1" type="radio" name="gender" id="ayol">
                       <label class="form-check-label" for="ayol">
                         Ayol
                       </label>
@@ -101,17 +101,17 @@
                 </div>
                 <div class="col-6">
                   <div class="mb-3">
-                    <label for="district" class="form-label">Yashash shahar/tumani:</label>
-                    <select class="form-select" aria-label="Default select example" id="district" name="district">
+                    <label for="region" class="form-label">Yashash viloyati:</label>
+                    <select class="form-select" aria-label="Default select example"
+                      onchange="getDistricts(event.target.value)" id="region" name="region">
                       <option selected>Ro'yxatdan tanlang</option>
                     </select>
                   </div>
                 </div>
                 <div class="col-6">
                   <div class="mb-3">
-                    <label for="region" class="form-label">Yashash viloyati:</label>
-                    <select class="form-select" aria-label="Default select example" onchange="getDistricts(event)"
-                      id="region" name="region">
+                    <label for="district" class="form-label">Yashash shahar/tumani:</label>
+                    <select class="form-select" aria-label="Default select example" id="district" name="district">
                       <option selected>Ro'yxatdan tanlang</option>
                     </select>
                   </div>
@@ -147,8 +147,8 @@
                     <label for="family" class="form-label">Oilaviy holati:</label>
                     <select class="form-select" aria-label="Default select example" id="family" name="family">
                       <option selected>Ro'yxatdan tanlang</option>
-                      <option value="Turmush qurgan">O'rta maxsus</option>
-                      <option value="Turmush qurmagan">Oliy ma'lumotli</option>
+                      <!-- <option value="Turmush qurgan">Turmush qurgan</option>
+                      <option value="Turmush qurmagan">Turmush qurmagan</option> -->
                     </select>
                   </div>
                 </div>
@@ -157,10 +157,7 @@
                     <label for="worktime" class="form-label">Ish jadvali:</label>
                     <select class="form-select" aria-label="Default select example" id="worktime" name="worktime">
                       <option selected>Ro'yxatdan tanlang</option>
-                      <option value="O'rindosh">O'rindosh</option>
-                      <option value="Yarim stavka">Yarim stavka</option>
-                      <option value="To'liq stavka">To'liq stavka</option>
-                      <option value="Soatbay">Soatbay</option>
+
                     </select>
                   </div>
                 </div>
@@ -173,7 +170,7 @@
                 <div class="col-6">
                   <div class="mb-3">
                     <label for="file" class="form-label">Shifokor rasmi</label>
-                    <input name="file" type="file" class="form-control" id="file" required />
+                    <input name="file" type="file" class="form-control" id="file" />
                   </div>
                 </div>
               </div>
@@ -195,11 +192,14 @@
       <thead>
         <tr>
           <th scope="col">#</th>
-          <th scope="col">Xona raqami</th>
-          <th scope="col">Sig'imlilik</th>
+          <th></th>
+          <th scope="col">Ism familiyasi</th>
           <th scope="col">Bo'lim</th>
-          <th scope="col">Qo'shilgan vaqti</th>
-          <th scope="col">Holati</th>
+          <th scope="col">Mutaxassisligi</th>
+          <th scope="col">Telefon raqami</th>
+          <th scope="col">Ish jadvali</th>
+          <th scope="col"></th>
+          <th scope="col"></th>
           <th scope="col"></th>
         </tr>
       </thead>
