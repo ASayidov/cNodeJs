@@ -149,7 +149,7 @@
 
 // console.log(massalar);
 
-//2 chi yo'li:
+//2 chi yo'li:------------------------------------------------------------------------------
 // let r;
 // let m = [];
 
@@ -190,6 +190,23 @@
 // }
 
 // console.log(arr);
+
+// yana bir varianti ------------------------------------
+//let a = 25
+// let b = 45
+
+// let arrRanNum = [];
+
+
+// while (arrRanNum.length < 20) {
+//     let run = Math.ceil(Math.random() * 45);
+//     if (run >= a && run <= b) {
+//         arrRanNum.push(run);
+//     }
+// }
+
+// console.log(arrRanNum);
+
 //---------------------------------------------------------------------------------------------------------------
 //Massivni teskari tarzda chop eting
 
