@@ -307,6 +307,35 @@
 // d) massivning birinchi 6 ta elementi summasi
 // e) elementlar o'rta arifmetigi
 
+let arr = [1, 8, 5, 2, 9, 4, 15]
+
+let sum = 0;
+let s1 = 1;
+let kv = 1;
+
+
+//------
+for (let i = 0; i < arr.length; i++) {
+    sum += arr[i]
+    s1 *= arr[i]
+
+}
+//------
+kv = Math.pow(sum, 2)
+//------
+
+let sum2 = 0;
+
+for (let i = 0; i < 6; i++) {
+    sum2 += arr[i]
+}
+
+//------
+let ortArif = 0;
+ortArif = sum / arr.length
+
+
+
 //---------------------------------------------------------------------------------------------------------
 // massivning eng katta elementini toping
 // let arr = [2, 8, 9, 5, 1, 7, 15, 26, 78, 94];
