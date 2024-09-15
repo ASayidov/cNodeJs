@@ -148,6 +148,27 @@
 // }
 
 // console.log(massalar);
+
+//2 chi yo'li:
+// let r;
+// let m = [];
+
+// let a = 190
+// let b = 163
+// let n = 19
+
+// while (true) {
+//     r = Math.round(Math.random() * 190)
+//     if (r > 163 && r < 190) {
+//         m.push(r)
+//     }
+//     if (m.length > n) {
+//         break
+//     }
+// };
+// console.log(m);
+
+
 //-----------------------------------------------------------------------------------------------------------
 //Massivni a va b orasida yotuvchi n ta tasodifiy sonlar bilan to'ldiring
 
