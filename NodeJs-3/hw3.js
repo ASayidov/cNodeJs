@@ -623,6 +623,31 @@ ortArif = sum / arr.length
 // }
 // let natija = matn.split(longWord).join("a");
 // console.log(natija);
+
+// ikkinchi usuli -------------------------------
+
+
+// let suz = matn.split(" ");
+
+// let long = suz[0].length
+// let longWord = ''
+
+
+// for(let i =1; i < suz.length; i++){
+    
+//     if(long<suz[i].length){
+//         long=suz[i].length
+//         longWord = suz[i]
+//     }
+// }
+
+
+// let res = matn.split(longWord).join('a')
+
+// console.log(res)
+
+
+
 //------------------------------------------------------------------------------------
 // 18. matndagi eng qisqa uzunlikdagi so'zni uzunligini chiqaring
 
