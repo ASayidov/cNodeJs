@@ -602,6 +602,27 @@ ortArif = sum / arr.length
 
 // let natija = harflar.join("").split(harf).join("");
 // console.log(natija);
+// ikkinchi usuli------------------------------
+let matn = `matn berilgan. matnda eng ko'p uchragan harfni toping`
+let count = 0;
+let maxCount = 0;
+let harf = ''
+
+for(let i = 0; i<matn.length; i++){
+        count=0
+        for(let j = 0; j<matn.length; j++){
+            if(matn[i]===matn[j]) {
+                count++
+                if(count > maxCount){
+                maxCount = count
+                harf = matn[i]
+            }
+        }
+   }
+}
+
+let res = matn.split(harf).join('')
+console.log(res)
 
 //----------------------------------------------------------------------------------------
 
