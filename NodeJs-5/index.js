@@ -11,7 +11,12 @@ class Tex {
     this.sale = sale
     this.totPrice = totPrice
   }
-  sayMyName(){}
+  sayMyName(){
+    console.log(`Maxsulot nomi:${this.name}`);
+  }
+  addPrice(){this.price+=this.price}
 }
 
-console.log("test");
+const pr_1 = new Tex('perfarator','santexnika', 850000)
+
+pr_1.sayMyName('Per')

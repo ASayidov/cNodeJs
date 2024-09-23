@@ -1,6 +1,6 @@
-const in1 = document.getElementById("in1");
-const btnAdd = document.getElementById("btnAdd");
-const textArea = document.querySelector(".textarea");
+// const in1 = document.getElementById("in1");
+// const btnAdd = document.getElementById("btnAdd");
+// const textArea = document.querySelector(".textarea");
 
 // const sendValue = (count = 10) => {
 //   for (let i = 0; i < count; i++) {
