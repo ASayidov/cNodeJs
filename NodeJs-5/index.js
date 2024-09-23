@@ -4,7 +4,14 @@
 // - maydonlar: mahsulot nomi, turi, narhi, skidka, umumiy narhi
 
 class Tex {
-  constructor(prName, prType, prPrice) {}
+  constructor(name, type, price, sale, totPrice) {
+    this.name = name
+    this.type = type
+    this.price = price
+    this.sale = sale
+    this.totPrice = totPrice
+  }
+  sayMyName(){}
 }
 
 console.log("test");
