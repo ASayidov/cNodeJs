@@ -2,7 +2,6 @@
 // vazifa
 // - texnika mahsulotlarni qo'shish va o'qish.
 // - maydonlar: mahsulot nomi, turi, narhi, skidka, umumiy narhi
-
 class Tex {
   constructor(name, type, price, sale, totPrice) {
     this.name = name
@@ -14,9 +13,14 @@ class Tex {
   sayMyName(){
     console.log(`Maxsulot nomi:${this.name}`);
   }
-  addPrice(){this.price+=this.price}
+  addPrice(narx)
+  {this.price+=narx
+  console.log(`Maxsulot narxi:${this.price}`);
+      
+  }
 }
 
 const pr_1 = new Tex('perfarator','santexnika', 850000)
 
-pr_1.sayMyName('Per')
+pr_1.addPrice(1000)
+
